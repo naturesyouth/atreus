@@ -77,12 +77,11 @@ after the fact.
 This layout has five modifiers and 37 non-modifiers.
 
 I strongly prefer the feel and sound of tactile [[http://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=651][Cherry MX blue]]
-switches for typing. However, I like having linear switches on the
-modifier keys (ctrl, alt, super, shift, and fn). [[http://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=102][Cherry MX red
-switches]] are nice and light but are more expensive and difficult to
-find. [[http://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=103][Cherry MX black switches]] are cheaper and easier to source, but
-may be too heavy if you modify the layout to include modifiers under
-the pinkies.
+switches for typing. However, I like having linear [[http://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=103][Cherry MX black
+switches]] switches on the modifier keys (ctrl, alt, super, shift, and
+fn) because the tactile effect has no benefit for keys that are held
+down, and giving a different response helps you learn the layout more
+quickly.
 
 *** Diodes
 
@@ -130,7 +129,7 @@ TODO: describe finishing process for wood.
 
 ** Firmware
 
-The [[https://gitlab.com/technomancy/atreus-firmware/blob/master/readme.md][custom Atreus firmware]] is a small (~100 LOC) project which
+The [[https://gitlab.com/technomancy/atreus-firmware/blob/master/readme.md][custom Atreus firmware]] is a small C project which
 implements matrix scanning and debouncing with user-customizeable
 layers and macro functions. Another option is the much more complex
 TMK firmware. My [[https://github.com/technomancy/tmk_keyboard/tree/atreus][fork of the tmk firmware]] has support for the Atreus
@@ -161,28 +160,13 @@ of the layout which has the same effect.
 - 5 MX Red switches: $10.00 (optional)
 - additional 1.5x DSA keycap: $1 (optional)
 
-=(+ 29 3.45 18 16 11 (* 3 10))= $99.95 plus tax/shipping
-
 - mechanicalkeyboards.com: free shipping in the US
 - Signature Plastics (keycaps) US shipping: $8.00
 - PJRC (teensy) shipping: $3.03
 
-*** Cost-saving Options
-
-There are a few ways to lower the cost further.  Using [[http://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=482][Matias]] key
-switches could save you a fair bit if you go in on a 90-pack with
-someone else, but they're a little harder to find keycaps for; the MX
-caps won't work on them. Using wood for the case will reduce both the
-materials cost as well as the amount of time needed to cut the case.
-
-Replacing the colored acrylic with transparent might also save a few
-dollars. You could also use thinner acrylic for the switch plate too;
-I cut mine in 4.5mm. A thinner spacer is inadvisable; even with 6mm
-it's pretty tight.
-
-Another common trick is scavenging keycaps and switches from used
-keyboards; something with Cherry or Alps switches should work. This
-can be time-consuming though.
+I haven't found a way to add the 1.5x keycap to an order of the DSA
+base set, so you might be stuck paying Signature Plastics shipping
+twice.
 
 *** Other Tools
 
@@ -196,17 +180,28 @@ bottom to prevent the board from sliding around when placed on a desk.
 
 Once you have all the parts, the first thing to do is glue the
 switches to the switch plate since there's no PCB to hold them in
-place. Be aware that the screw holes unfortunately are not
-symmetrical, so before inserting the switches it's important to ensure
-that the plate is right-side-up. Use a drop of hot glue on the top and
-bottom of each switch to affix it in place.
+place. Place all the switches in their holes, taking care to place the
+black switches where the modifiers go if applicable. Once the switches
+have been placed, flip the board over and place hot glue along the
+left and right side of each switch hole.
 
-TODO: document using the diode legs for the columns.
+[[./diodes.jpg]]
+
+Once the switches are in place, you'll need to solder the diodes
+in. For each side of the board start on the outside and work your way
+inward. Each switch has two metal contacts. The higher one is where
+you'll want to attach the diode. Each diode has a black ring on
+it. Cut the leg on the other side away from the ring and solder it to
+the higher switch contact. The other leg should point inward to the
+next switch. Once you've attached a diode to each switch in the row,
+you can start connecting them together. Solder the long leg of the
+diode to the long leg of the next diode in the row. The innermost
+diodes can have their long leg trimmed a bit; that's where you'll
+attach the hookup wire to connect it into the microcontroller.
 
 [[./wires.jpg]]
 
-Once the switches are in place, the matrix must be created. I
-recommend getting red wire for the (positive) rows and black for the
+I recommend getting red wire for the (positive) rows and black for the
 (negative) columns. The rows need eight wires with the insulation
 exposed at intervals matching the spacing of the switches; see the
 above photo for details. You could also just use many short stripped
