@@ -105,9 +105,13 @@ keycap from [[http://www.keycapsdirect.com/key-capsinventory.php][Signature Plas
 
 ** Case
 
-Layered laser-cut wood or acrylic; see [[file:./case.svg][the =case.svg= file]].
-
-TODO: mention the difference between mk. I and mk. II cases.
+Layered laser-cut wood or acrylic. The original case (=case-mk-i.svg=)
+is slightly less wide and has a minor asymmetry with the screws on the
+bottom side. The [[http://geekhack.org/index.php?topic%3D54759.msg1304117#msg1304117][mark II case]] (in the `case` directory) is implemented
+programmatically in openscad, though dxf files are available as a
+convenience, which can be converted to SVG or EPS for laser cutting
+with Inkscape. It features 8 screw holes and a kind of "stair step"
+design around the top and bottom of the key clusters.
 
 [[./layers.jpg]]
 
