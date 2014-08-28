@@ -301,6 +301,7 @@ otherwise) and get your name and link added here:
 - [[http://technomancy.us/173][Phil Hagelberg]]
 - [[http://blog.tarn-vedra.de/2014/04/reproducing-keyboard-science_1707.html][Moritz Ulrich]]
 - [[http://geekhack.org/index.php?topic=57007.0][Constantine]]
+- [[http://blog.mattgauger.com/blog/2014/08/19/atreus-my-custom-keyboard/][Matt Gauger]]
 
 ** License
 
