@@ -38,10 +38,6 @@ hand_separation        = 0;
    leave. See spacer(). */
 switch_hole_size = 14;
 
-/* Sets whether the case should use notched holes. As far as I can
-   tell these notches are not all that useful... */
-use_notched_holes = true;
-
 /* Number of rows and columns in the matrix. You need to update
    staggering_offsets if you change n_cols. */
 n_rows = 4;
@@ -75,24 +71,16 @@ module rz(angle, center=undef) {
 function rz_fun(p, angle, center) = [cos(angle) * (p[0] - center[0]) - sin(angle) * (p[1] - center[1]) + center[0],
                                      sin(angle) * (p[0] - center[0]) + cos(angle) * (p[1] - center[1])+ center[1]];
 
-module switch_hole(position, notches=use_notched_holes) {
-  /* Cherry MX switch hole with the center at `position`. Sizes come
-     from the ErgoDox design. */
-  hole_size    = 13.97;
-  notch_width  = 3.5001;
-  notch_offset = 4.2545;
-  notch_depth  = 0.8128;
+module switch_hole(position) {
+  /* MX/Alps-compatible switch hole, based on
+     http://geekhack.org/index.php?action=dlattach;topic=60268.0;attach=69978;image */
+  mx_hole_size = 13.97;
+  alps_hole_height = 12.8;
+  alps_hole_width = 15.5;
   translate(position) {
     union() {
-      square([hole_size, hole_size], center=true);
-      if (notches == true) {
-        translate([0, notch_offset]) {
-          square([hole_size+2*notch_depth, notch_width], center=true);
-        }
-        translate([0, -notch_offset]) {
-          square([hole_size+2*notch_depth, notch_width], center=true);
-        }
-      }
+      square([mx_hole_size, mx_hole_size], center=true);
+      square([alps_hole_width, alps_hole_height], center=true);
     }
   }
 };
