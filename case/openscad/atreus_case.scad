@@ -51,7 +51,7 @@ n_cols = 5;
 n_thumb_keys = 1;
 
 /* The width of the USB cable hole in the spacer. */
-cable_hole_width = 4;
+cable_hole_width = 12;
 
 /* Vertical column staggering offsets. The first element should
    be zero. */
@@ -216,7 +216,7 @@ module right_screw_holes(hole_radius) {
   }
 
   /* add the screw hole near the cable hole */
-  translate([cable_hole_width + washer_radius - tmp[0],
+  translate([washer_radius - tmp[0],
              back_screw_hole_offset]) {
     rotate_half() {
       add_hand_separation() {
@@ -275,14 +275,14 @@ module spacer() {
           right_half(switch_holes=false, key_size=switch_hole_size + 3);
           left_half(switch_holes=false, key_size=switch_hole_size + 3);
         }
-      }
-      screw_holes(washer_radius);
-    }
-    screw_holes(screw_hole_radius);
     /* add the USB cable hole: */
     translate([-0.5*cable_hole_width, 2*column_spacing]) {
       square([cable_hole_width, (2*n_rows) * column_spacing]);
     }
+      }
+      screw_holes(washer_radius);
+    }
+    screw_holes(screw_hole_radius);
   }
 }
 
