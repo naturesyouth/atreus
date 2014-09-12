@@ -89,8 +89,8 @@ In order to avoid ghosting, each switch needs a [[https://www.radioshack.com/pro
 
 *** Microcontroller
 
-An [[http://www.digikey.com/product-search/en/programmers-development-systems/evaluation-boards-embedded-mcu-dsp/2621773?k=arduino%20micro][Arduino Micro]] or [[http://www.pjrc.com/teensy/index.html][Teensy 2]] is recommended. Be sure to get one
-without headers so it will fit in between the bottom layer and the plate.
+A [[http://www.pjrc.com/teensy/index.html][Teensy 2]] is recommended. Be sure to get one without headers so it
+will fit in between the bottom layer and the plate.
 
 *** Keycaps
 
@@ -110,24 +110,18 @@ is slightly less wide and has a minor asymmetry with the screws on the
 bottom side. The [[http://geekhack.org/index.php?topic%3D54759.msg1304117#msg1304117][mark II case]] (in the `case` directory) is implemented
 programmatically in openscad, though dxf files are available as a
 convenience, which can be converted to SVG or EPS for laser cutting
-with Inkscape. It features 8 screw holes and a kind of "stair step"
-design around the top and bottom of the key clusters.
+with Inkscape. Mark II features 8 screw holes and a kind of "stair
+step" design around the top and bottom of the key clusters; mark I is
+pictured below.
 
 [[./layers.jpg]]
 
-The first two shapes in the case file are the top and bottom covers;
-these should be cut on 3mm acrylic (black in the photo). The third is
-the spacer that goes under the fourth, which is the plate on which the
-switches are mounted. These should be cut in 6mm, especially the
-spacer, which needs to be at least as thick as the mini USB cable you
-connect to the microcontroller. I recommend using a mini USB cable
-with as thin a connector as you can find or sanding the connector
-down to the required thickness. The switch plate could be thinner, but
-not under 3mm.
-
-On a 100W Epilog laser, the 3mm layers cut in about a minute and a
-half. I did a run with 6mm acrylic of the other layers which took
-nearly 6 minutes.
+The bottom and top covers (black in the photo) should be cut in 3mm.
+The switch plate (frosted in the photo) can be cut in 4.5mm or
+3mm. The spacer should be cut in 6mm; it needs to be at least as
+thick as the mini USB cable you connect to the microcontroller. I
+recommend using a mini USB cable with as thin a connector as you can
+find or sanding the connector down to the required thickness.
 
 TODO: describe finishing process for wood.
 
@@ -143,22 +137,21 @@ to produce a qwerty =atreus.hex= file. You will probably want to
 create your own layout once you've gotten a chance to try it and see
 what works for you.
 
-In either case you would use the =.hex= file produced with the [[http://www.pjrc.com/teensy/loader.html][teensy
-loader]] or Arduino tools to upload to the microcontroller.
+In either case you would use the =.hex= file produced with the [[http://www.pjrc.com/teensy/loader.html][teensy loader]] to upload to the microcontroller.
 
 Once the firmware is loaded and the keyboard is assembled, pressing
 the onboard reset button to update new versions of the firmware is
-pretty cumbersome; instead use the "reset" button on the lower left
-of the layout which has the same effect.
+pretty cumbersome; instead use the "reset" button on the layout, which
+has the same effect.
 
 ** Bill of Materials
 
 - 50 MX Blue switches: $29.00 (mechanicalkeyboards.com)
 - 50 diodes: $3.45 (radio shack, should be able to buy in-person)
-- Base blank DSA keycap set: $18.00 (signatureplastics.com)
-- Teensy 2: $16 (pjrc.com or mechanicalkeyboards.com)
-- Acrylic materials: $11
-- Acrylic laser cutting: 7.5 at $3/min (varies by thickness of acrylic)
+- Base blank DSA keycap set: $21.00 (signatureplastics.com)
+- Teensy 2: $16 (pjrc.com)
+- Acrylic materials: ~$11, varies by source
+- Acrylic laser cutting: 7.5 minutes at $3/min (varies by thickness of acrylic)
 
 - 5 MX Black switches: $8.50 (optional)
 - 5 MX Red switches: $10.00 (optional)
@@ -174,114 +167,15 @@ twice.
 
 *** Other Tools
 
-You'll need a soldering iron, solder, a glue gun, a multimeter, wire,
-wire strippers, and a 5-pin USB Mini-B cable. You'll also need seven M3
-machine screws with nuts; the length of the screws depends on the
-thickness of the acrylic you use. You can add rubber feet to the
+You'll need a soldering iron, solder, a glue gun, a multimeter, hookup
+wire, wire strippers, and a USB Mini-B cable. You'll also need
+eight M3 machine screws with nuts; the length of the screws depends on
+the thickness of the acrylic you use. You can add rubber feet to the
 bottom to prevent the board from sliding around when placed on a desk.
 
 ** Assembly
 
-Once you have all the parts, the first thing to do is glue the
-switches to the switch plate since there's no PCB to hold them in
-place. Place all the switches in their holes, taking care to place the
-black switches where the modifiers go if applicable. Once the switches
-have been placed, flip the board over and place hot glue along the
-left and right side of each switch hole.
-
-[[./diodes.jpg]]
-
-Once the switches are in place, you'll need to solder the diodes
-in. For each side of the board start on the outside and work your way
-inward. Each switch has two metal contacts. The higher one is where
-you'll want to attach the diode. Each diode has a black ring on
-it. Cut the leg on the other side away from the ring and solder it to
-the higher switch contact. The other leg should point inward to the
-next switch. Once you've attached a diode to each switch in the row,
-you can start connecting them together. Solder the long leg of the
-diode to the long leg of the next diode in the row. The innermost
-diodes can have their long leg trimmed a bit; that's where you'll
-attach the hookup wire to connect it into the microcontroller.
-
-[[./wires.jpg]]
-
-I recommend getting red wire for the (positive) rows and black for the
-(negative) columns. The rows need eight wires with the insulation
-exposed at intervals matching the spacing of the switches; see the
-above photo for details. You could also just use many short stripped
-segments of wire instead of a contiguous piece.
-
-[[./thumb-diagram.png]]
-
-Most of the row wires will need four segments of insulation, but
-you'll need two with five for the rows with the inner thumb
-keys. Physically the inner thumb keys look like two additional
-columns, but logically they are treated as if they're both in column
-number 6; the left key in row 3 and the right one in row 4.
-
-[[./matrix.jpg]]
-
-The exposed sections of row wire should be connected to the higher of
-the pins on the switch using a diode. Be aware that diodes are
-directional! The band around the diode should point to the top of the
-board. Take care with the upper row that you don't let the wire go too
-close to the top edge of the board; avoid getting in the way of the
-spacer layer. Once the rows are wired, the remaining (negative) pin of
-each switch should be wired into the negative pin of the switch above
-and below it with black wire. This should be slightly easier since no
-diode is necessary. The photo above shows the completed matrix for one
-side. Test each row and column as you go with a multimeter. You should
-be able to get continuity from row to column when the corresponding
-switch is activated.
-
-After the matrix has been wired on both sides, the next step is to
-connect the microcontroller. Both the Atreus and TMK firmwares have
-the rows in pins D0, D1, D2, and D3 of the microcontroller.
-
-|------------+----+----+----+----|
-| row number |  1 |  2 |  3 |  4 |
-|------------+----+----+----+----|
-| pin number | D0 | D1 | D2 | D3 |
-
-You'll need to connect the rows from the right side to the left side,
-which then should be wired to the proper pin. There are more
-columns than rows, so I used ribbon cable to bring the column
-connections back to the microcontroller from the outside in.
-
-Depending on the firmware you want to use, you'll wire the columns
-differently. The simpler Atreus firmware simply starts at B0 and goes
-up to F4-6, while the more featureful TMK firmware jumps all over the
-place.
-
-Atreus:
-
-|---------------+----+----+----+----+----+----+----+----+----+----+----|
-| column number |  0 |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 10 |
-|---------------+----+----+----+----+----+----+----+----+----+----+----|
-| pin number    | B0 | B1 | B2 | B3 | B4 | B5 | B6 | B7 | F4 | F5 | F6 |
-
-TMK:
-
-|---------------+----+----+----+----+----+----+----+----+----+----+----|
-| column number |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 10 | 11 |
-|---------------+----+----+----+----+----+----+----+----+----+----+----|
-| pin number    | F0 | F1 | E6 | C7 | C6 | B6 | D4 | B1 | B0 | B5 | B4 |
-
-(It may be possible to adapt the TMK firmware to the consecutive pinout.)
-
-It's important to realize that when you flip over the board
-in order to solder it, you have to flip over the schematic in your
-mind too. If you count your columns from the left, you'll get them
-backwards. (Which I actually did for the first half.)
-
-[[./controller.jpg]]
-
-Once you've wired one side of the microcontroller in, it would be a
-good time to test it. You'll need to compile and upload as per the
-"Firmware" section above. At this point you should be reading real
-keycodes from the half of the keyboard that you've wired. Once you've
-confirmed that's working, continue with the other half. Then screw the
-other layers in place and you're all set!
+See the [[http://atreus.technomancy.us/assembly.pdf][assembly instructions]] PDF
 
 ** Inspiration
 
@@ -303,8 +197,13 @@ otherwise) and get your name and link added here:
 - [[http://geekhack.org/index.php?topic=57007.0][Constantine]]
 - [[http://blog.mattgauger.com/blog/2014/08/19/atreus-my-custom-keyboard/][Matt Gauger]]
 
+** Orestes
+
+A new [[https://www.flickr.com/photos/technomancy/14654421878][experimental build]] uses the [[http://pjrc.com/store/teensy31.html][Teensy 3]] microcontroller and
+[[https://github.com/technomancy/orestes/tree/teensy3][Forth-based]] firmware, but this is not yet stable.
+
 ** License
 
-Copyright © 2014 Phil Hagelberg
+Copyright © 2014 Phil Hagelberg and contributors
 
 Released under the [[https://www.gnu.org/licenses/gpl.html][GNU GPL version 3]]
