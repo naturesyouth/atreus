@@ -1,0 +1,279 @@
+# EESchema Netlist Version 1.1 created  Tue 14 Oct 2014 08:27:59 PM PDT
+(
+ ( /543DB8D9 DIODE D0:0 DIODE
+  ( 1 N-000011 )
+  ( 2 N-000017 )
+ )
+ ( /543DB886 DIODE D0:1 DIODE
+  ( 1 N-000024 )
+  ( 2 N-000020 )
+ )
+ ( /543DB8E4 DIODE D0:2 DIODE
+  ( 1 N-000028 )
+  ( 2 N-000016 )
+ )
+ ( /543DB8E5 DIODE D0:3 DIODE
+  ( 1 N-000008 )
+  ( 2 N-000031 )
+ )
+ ( /543DB901 DIODE D1:0 DIODE
+  ( 1 N-000011 )
+  ( 2 N-000026 )
+ )
+ ( /543DB902 DIODE D1:1 DIODE
+  ( 1 N-000024 )
+  ( 2 N-000025 )
+ )
+ ( /543DB8FE DIODE D1:2 DIODE
+  ( 1 N-000028 )
+  ( 2 N-000029 )
+ )
+ ( /543DB8FD DIODE D1:3 DIODE
+  ( 1 N-000008 )
+  ( 2 N-000030 )
+ )
+ ( /543DB912 DIODE D2:0 DIODE
+  ( 1 N-000011 )
+  ( 2 N-000002 )
+ )
+ ( /543DB913 DIODE D2:1 DIODE
+  ( 1 N-000024 )
+  ( 2 N-000004 )
+ )
+ ( /543DB90F DIODE D2:2 DIODE
+  ( 1 N-000028 )
+  ( 2 N-000003 )
+ )
+ ( /543DB90E DIODE D2:3 DIODE
+  ( 1 N-000008 )
+  ( 2 N-000005 )
+ )
+ ( /543DB907 DIODE D3:0 DIODE
+  ( 1 N-000011 )
+  ( 2 N-000021 )
+ )
+ ( /543DB906 DIODE D3:1 DIODE
+  ( 1 N-000024 )
+  ( 2 N-000023 )
+ )
+ ( /543DB90A DIODE D3:2 DIODE
+  ( 1 N-000028 )
+  ( 2 N-000007 )
+ )
+ ( /543DB90B DIODE D3:3 DIODE
+  ( 1 N-000008 )
+  ( 2 N-000006 )
+ )
+ ( /543DB91A DIODE D4:0 DIODE
+  ( 1 N-000011 )
+  ( 2 N-000013 )
+ )
+ ( /543DB91B DIODE D4:1 DIODE
+  ( 1 N-000024 )
+  ( 2 N-000010 )
+ )
+ ( /543DB917 DIODE D4:2 DIODE
+  ( 1 N-000028 )
+  ( 2 N-000014 )
+ )
+ ( /543DB916 DIODE D4:3 DIODE
+  ( 1 N-000008 )
+  ( 2 N-000015 )
+ )
+ ( /543DBAE8 DIODE D5:2 DIODE
+  ( 1 N-000028 )
+  ( 2 N-000009 )
+ )
+ ( /543DBAE2 DIODE D5:3 DIODE
+  ( 1 N-000008 )
+  ( 2 N-000009 )
+ )
+ ( /543DB89F pin_array_12x2 P1 CONN_10
+  ( 1 N-000019 )
+  ( 2 N-000027 )
+  ( 3 N-000001 )
+  ( 4 N-000022 )
+  ( 5 N-000012 )
+  ( 6 N-000011 )
+  ( 7 N-000024 )
+  ( 8 N-000028 )
+  ( 9 N-000008 )
+  ( 10 N-000018 )
+ )
+ ( /543DB8DA MX_FLIP SW0:0 SWITCH_PUSH
+  ( 1 N-000019 )
+  ( 2 N-000017 )
+ )
+ ( /543DB879 MX_FLIP SW0:1 SWITCH_PUSH
+  ( 1 N-000019 )
+  ( 2 N-000020 )
+ )
+ ( /543DB8E3 MX_FLIP SW0:2 SWITCH_PUSH
+  ( 1 N-000019 )
+  ( 2 N-000016 )
+ )
+ ( /543DB8E6 MX_FLIP SW0:3 SWITCH_PUSH
+  ( 1 N-000019 )
+  ( 2 N-000031 )
+ )
+ ( /543DB900 MX_FLIP SW1:0 SWITCH_PUSH
+  ( 1 N-000027 )
+  ( 2 N-000026 )
+ )
+ ( /543DB903 MX_FLIP SW1:1 SWITCH_PUSH
+  ( 1 N-000027 )
+  ( 2 N-000025 )
+ )
+ ( /543DB8FF MX_FLIP SW1:2 SWITCH_PUSH
+  ( 1 N-000027 )
+  ( 2 N-000029 )
+ )
+ ( /543DB8FC MX_FLIP SW1:3 SWITCH_PUSH
+  ( 1 N-000027 )
+  ( 2 N-000030 )
+ )
+ ( /543DB911 MX_FLIP SW2:0 SWITCH_PUSH
+  ( 1 N-000001 )
+  ( 2 N-000002 )
+ )
+ ( /543DB914 MX_FLIP SW2:1 SWITCH_PUSH
+  ( 1 N-000001 )
+  ( 2 N-000004 )
+ )
+ ( /543DB910 MX_FLIP SW2:2 SWITCH_PUSH
+  ( 1 N-000001 )
+  ( 2 N-000003 )
+ )
+ ( /543DB90D MX_FLIP SW2:3 SWITCH_PUSH
+  ( 1 N-000001 )
+  ( 2 N-000005 )
+ )
+ ( /543DB908 MX_FLIP SW3:0 SWITCH_PUSH
+  ( 1 N-000022 )
+  ( 2 N-000021 )
+ )
+ ( /543DB905 MX_FLIP SW3:1 SWITCH_PUSH
+  ( 1 N-000022 )
+  ( 2 N-000023 )
+ )
+ ( /543DB909 MX_FLIP SW3:2 SWITCH_PUSH
+  ( 1 N-000022 )
+  ( 2 N-000007 )
+ )
+ ( /543DB90C MX_FLIP SW3:3 SWITCH_PUSH
+  ( 1 N-000022 )
+  ( 2 N-000006 )
+ )
+ ( /543DB919 MX_FLIP SW4:0 SWITCH_PUSH
+  ( 1 N-000012 )
+  ( 2 N-000013 )
+ )
+ ( /543DB91C MX_FLIP SW4:1 SWITCH_PUSH
+  ( 1 N-000012 )
+  ( 2 N-000010 )
+ )
+ ( /543DB918 MX_FLIP SW4:2 SWITCH_PUSH
+  ( 1 N-000012 )
+  ( 2 N-000014 )
+ )
+ ( /543DB915 MX_FLIP SW4:3 SWITCH_PUSH
+  ( 1 N-000012 )
+  ( 2 N-000015 )
+ )
+ ( /543DBACF MX_FLIP SW5 SWITCH_PUSH
+  ( 1 N-000018 )
+  ( 2 N-000009 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component D0:0
+ D?
+ S*
+$endlist
+$component D0:1
+ D?
+ S*
+$endlist
+$component D0:2
+ D?
+ S*
+$endlist
+$component D0:3
+ D?
+ S*
+$endlist
+$component D1:0
+ D?
+ S*
+$endlist
+$component D1:1
+ D?
+ S*
+$endlist
+$component D1:2
+ D?
+ S*
+$endlist
+$component D1:3
+ D?
+ S*
+$endlist
+$component D2:0
+ D?
+ S*
+$endlist
+$component D2:1
+ D?
+ S*
+$endlist
+$component D2:2
+ D?
+ S*
+$endlist
+$component D2:3
+ D?
+ S*
+$endlist
+$component D3:0
+ D?
+ S*
+$endlist
+$component D3:1
+ D?
+ S*
+$endlist
+$component D3:2
+ D?
+ S*
+$endlist
+$component D3:3
+ D?
+ S*
+$endlist
+$component D4:0
+ D?
+ S*
+$endlist
+$component D4:1
+ D?
+ S*
+$endlist
+$component D4:2
+ D?
+ S*
+$endlist
+$component D4:3
+ D?
+ S*
+$endlist
+$component D5:2
+ D?
+ S*
+$endlist
+$component D5:3
+ D?
+ S*
+$endlist
+$endfootprintlist
+}
