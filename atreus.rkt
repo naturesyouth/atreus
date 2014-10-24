@@ -75,7 +75,7 @@
 
 (define teensy-module
   `(module TEENSY_2.0 (layer Front) (tedit 4FDC31C8) (tstamp 543EF800)
-    (at 133 70 270)
+    (at 134 70 270)
     (path /543EEB02)
     (fp_text value TEENSY2.0 (at 0 0 270) (layer F.SilkS)
              (effects (font (size 3.048 2.54) (thickness 0.4572))))
@@ -225,10 +225,18 @@
                       '(0) (in-range rows))])
     (list (switch row col) (diode row col))))
 
+(define edge-cuts
+  (for/list [(s '([32 22] [84 22] [119 42] [125 54] [143 54] [149 42] [185 22]
+                  [236 22] [249 95] [161 112] [107 112] [19 95]))
+             (e '([84 22] [119 42] [125 54] [143 54] [149 42] [185 22]
+                  [236 22] [249 95] [161 112] [107 112] [19 95] [32 22]))]
+    `(gr_line (start ,@s) (end ,@e) (angle 90) (layer Edge.Cuts) (width 0.3))))
+
 (define board
   (apply append nets
          (list (net-class nets))
          (list teensy-module)
+         edge-cuts
          switches+diodes))
 
 (define (write-placement filename)
