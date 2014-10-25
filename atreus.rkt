@@ -259,6 +259,9 @@
       (display "\n" op)
       (for ([f board])
         (pretty-print f op 1))
+      (display (call-with-input-file "trace.rktd"
+                 (curry read-string 999999999)) op)
       (display ")" op))))
 
-(write-placement "/tmp/atreus.kicad_pcb")
+;; (write-placement "/tmp/atreus.kicad_pcb")
+
