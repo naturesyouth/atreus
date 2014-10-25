@@ -188,10 +188,15 @@
          [y′ (+ (if left? y-offset (+ y-offset 42.885)) (* hypotenuse (sin Θ′)))]
          [label (format "SW~a:~a" col row)]
          [diode (+ row (* col 4))]
+         ;; if we try to number nets linearly, kicad segfaults; woo!
+         ;; so we re-use the nets we skipped with the missing col 5/6 diodes
+         [diode (cond [(> diode 44) (- diode 20)]
+                      [(> diode 41) (- diode 21)]
+                      [true diode])]
          [net-col (if left? col (- col 1))])
     (switch-module x′ y′ rotation label
                    `(net ,(+ 16 diode)
-                     ,(string->symbol (format "N-col-~s" diode)))
+                     ,(string->symbol (format "N-diode-~s" diode)))
                    `(net ,(+ net-col 5)
                      ,(string->symbol (format "N-col-~s" net-col))))))
 
@@ -209,6 +214,11 @@
                 (* hypotenuse (sin Θ′)) 4.5)]
          [label (format "D~a:~a" col row)]
          [diode (+ row (* col 4))]
+         ;; if we try to number nets linearly, kicad segfaults; woo!
+         ;; so we re-use the nets we skipped with the missing col 5/6 diodes
+         [diode (cond [(> diode 44) (- diode 20)]
+                      [(> diode 41) (- diode 21)]
+                      [true diode])]
          [net-row (cond [(= col 5) 2]
                         [(= col 6) 3]
                         [true row])])
@@ -226,10 +236,10 @@
     (list (switch row col) (diode row col))))
 
 (define edge-cuts
-  (for/list [(s '([32 22] [84 22] [119 42] [125 54] [143 54] [149 42] [185 22]
-                  [236 22] [249 95] [161 112] [107 112] [19 95]))
-             (e '([84 22] [119 42] [125 54] [143 54] [149 42] [185 22]
-                  [236 22] [249 95] [161 112] [107 112] [19 95] [32 22]))]
+  (for/list [(s '([31 22] [84 22] [119 30] [125 54] [143 54] [149 30] [185 22]
+                  [237 22] [250 95] [161 112] [107 112] [18 95]))
+             (e '([84 22] [119 30] [125 54] [143 54] [149 30] [185 22]
+                  [237 22] [250 95] [161 112] [107 112] [18 95] [31 22]))]
     `(gr_line (start ,@s) (end ,@e) (angle 90) (layer Edge.Cuts) (width 0.3))))
 
 (define board
