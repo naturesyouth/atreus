@@ -43,7 +43,7 @@
 
 (define (diode-module x y rotation label net-pos net-neg)
   `(module DIODE (layer Front) (tedit 4E0F7A99) (tstamp 543EF854)
-    (at ,x ,y ,(+ 180 rotation))
+    (at ,x ,y ,(+ 90 rotation))
     (path /543DB90F)
     (fp_text reference D2:2 (at 0 0 180) (layer F.SilkS) hide
              (effects (font (size 1.016 1.016) (thickness 0.2032))))
@@ -74,7 +74,7 @@
          (layers Back B.Paste B.Mask))))
 
 (define teensy-module
-  `(module TEENSY_2.0 (layer Front) (tedit 4FDC31C8) (tstamp 543EF800)
+  `(module CONTROLLER (layer Front) (tedit 4FDC31C8) (tstamp 543EF800)
     (at 134 70 270)
     (path /543EEB02)
     (fp_text value TEENSY2.0 (at 0 0 270) (layer F.SilkS)
@@ -193,12 +193,14 @@
          [diode (cond [(> diode 44) (- diode 20)]
                       [(> diode 41) (- diode 21)]
                       [true diode])]
-         [net-col (if left? col (- col 1))])
+         [net-col (if left? col (- col 1))]
+         [diode-net `(net ,(+ 16 diode)
+                      ,(string->symbol (format "N-diode-~s" diode)))]
+         [column-net `(net ,(+ net-col 5)
+                       ,(string->symbol (format "N-col-~s" net-col)))])
     (switch-module x′ y′ rotation label
-                   `(net ,(+ 16 diode)
-                     ,(string->symbol (format "N-diode-~s" diode)))
-                   `(net ,(+ net-col 5)
-                     ,(string->symbol (format "N-col-~s" net-col))))))
+                   (if left? diode-net column-net)
+                   (if left? column-net diode-net))))
 
 (define (diode row col)
   (let* ([left? (< col 6)]
@@ -209,9 +211,9 @@
          [Θ (atan (/ y x))]
          [Θ′ (- Θ (degrees->radians rotation))]
          [x′ (+ (if left? x-offset 5) (* hypotenuse (cos Θ′))
-                (if left? -1 1))]
+                (if left? 9 -9))]
          [y′ (+ (if left? y-offset (+ y-offset 42.885))
-                (* hypotenuse (sin Θ′)) 4.5)]
+                (* hypotenuse (sin Θ′)))]
          [label (format "D~a:~a" col row)]
          [diode (+ row (* col 4))]
          ;; if we try to number nets linearly, kicad segfaults; woo!
@@ -223,10 +225,10 @@
                         [(= col 6) 3]
                         [true row])])
     (diode-module x′ y′ rotation label
-                  `(net ,(+ net-row 1)
-                    ,(string->symbol (format "N-row-~s" net-row)))
                   `(net ,(+ 16 diode)
-                    ,(string->symbol (format "N-diode-~s" diode))))))
+                    ,(string->symbol (format "N-diode-~s" diode)))
+                  `(net ,(+ net-row 1)
+                    ,(string->symbol (format "N-row-~s" net-row))))))
 
 (define switches+diodes
   (for/list ([col (in-range cols)]
@@ -260,8 +262,7 @@
       (for ([f board])
         (pretty-print f op 1))
       (display (call-with-input-file "trace.rktd"
-                 (curry read-string 999999999)) op)
+                 (curry read-string 999999)) op)
       (display ")" op))))
 
 ;; (write-placement "/tmp/atreus.kicad_pcb")
-
