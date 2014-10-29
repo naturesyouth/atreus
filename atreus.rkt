@@ -27,11 +27,11 @@
     (fp_line (start -6.35 6.35) (end -6.35 -6.35)
              (layer F.SilkS) (width 0.381))
     (pad 0 np_thru_hole circle (at 0 0) (size 3.9878 3.9878)
-         (drill 3.9878) (layers *.Cu)) ; switch hole, no copper
+         (drill 3.9878)) ; switch hole, no copper
     (pad 0 thru_hole circle (at -5.08 0) (size 1.7018 1.7018)
-         (drill 1.7018) (layers *.Cu)) ; board-mount hole, no copper
+         (drill 1.7018)) ; board-mount hole, no copper
     (pad 0 thru_hole circle (at 5.08 0) (size 1.7018 1.7018)
-         (drill 1.7018) (layers *.Cu)) ; board-mount hole, no copper
+         (drill 1.7018)) ; board-mount hole, no copper
     (pad 1 thru_hole circle (at 2.54 -5.08) (size 2.286 2.286) (drill 1.4986)
          (layers *.Cu *.SilkS *.Mask) ,net-pos)
     (pad 1 thru_hole circle (at 3.81 -2.54) (size 2.286 2.286) (drill 1.4986)
@@ -50,6 +50,12 @@
     (fp_line (start -1.524 -1.143) (end 1.524 -1.143)
              (layer F.SilkS) (width 0.2032))
     (fp_line (start 1.524 -1.143) (end 1.524 1.143)
+             (layer F.SilkS) (width 0.2032))
+    (fp_line (start 0 -1.143) (end 0 1.143)
+             (layer F.SilkS) (width 0.2032))
+    (fp_line (start 0 -1.143) (end -1.524 0)
+             (layer F.SilkS) (width 0.2032))
+    (fp_line (start -1.524 0) (end 0 1.143)
              (layer F.SilkS) (width 0.2032))
     (fp_line (start 1.524 1.143) (end -1.524 1.143)
              (layer F.SilkS) (width 0.2032))
