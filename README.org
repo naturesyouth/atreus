@@ -34,6 +34,13 @@ good shape. For instance, =enter= and =tab= are in a bit of an awkward
 position, but many programs treat =control-m= and =control-i= as
 =enter= and =tab= respectively.
 
+** Kits
+
+You can buy [[http://atreus.technomancy.us][Atreus kits]] that have all the parts you need along with
+detailed assembly instructions from http://atreus.technomancy.us. If
+you'd rather round up all the parts yourself, that's possible too; see
+the bill of materials below.
+
 ** Layout
 
 Only a handful of punctuation marks (and no digits) are available
@@ -148,30 +155,28 @@ has the same effect.
 
 - 50 MX Blue switches: $29.00 (mechanicalkeyboards.com)
 - 50 diodes: $3.45 (radio shack, should be able to buy in-person)
-- Base blank DSA keycap set: $21.00 (signatureplastics.com)
-- Teensy 2: $16 (pjrc.com)
-- Acrylic materials: ~$11, varies by source
-- Acrylic laser cutting: 7.5 minutes at $3/min (varies by thickness of acrylic)
+- Base blank DSA keycap set: $23.00 (signatureplastics.com)
+- Teensy 2: $16, $3 shipping (pjrc.com)
+- Acrylic materials: ~$16, varies by source
+- Acrylic laser cutting: 7.5 minutes on a 100W Epilog laser; varies by source
+- USB Mini-B cable: $5, various sources
 
-- 5 MX Black switches: $8.50 (optional)
-- 5 MX Red switches: $10.00 (optional)
-- additional 1.5x DSA keycap: $1 (optional)
+Recommended but optional:
 
-- mechanicalkeyboards.com: free shipping in the US
-- Signature Plastics (keycaps) US shipping: $8.00
-- PJRC (teensy) shipping: $3.03
+- 5 MX Black switches: $8.50 OR 5 MX Red switches: $10.00
+- additional 1.5x DSA keycap: $1 plus $8 shipping
 
-I haven't found a way to add the 1.5x keycap to an order of the DSA
-base set, so you might be stuck paying Signature Plastics shipping
-twice.
+The base keycap set only has one 1.5x key, which is used for the inner
+thumb keys. You can use a 1x key for one of them, but it looks kind of
+tacky, so I recommend getting a second 1.5x keycap separately.
 
 *** Other Tools
 
 You'll need a soldering iron, solder, a glue gun, a multimeter, hookup
-wire, wire strippers, and a USB Mini-B cable. You'll also need
-eight M3 machine screws with nuts; the length of the screws depends on
-the thickness of the acrylic you use. You can add rubber feet to the
-bottom to prevent the board from sliding around when placed on a desk.
+wire, and wire strippers. You'll also need eight M3 machine screws
+with nuts; the length of the screws depends on the thickness of the
+acrylic you use. You can add rubber feet to the bottom to prevent the
+board from sliding around when placed on a desk.
 
 ** Assembly
 
@@ -200,7 +205,7 @@ otherwise) and get your name and link added here:
 ** Orestes
 
 A new [[https://www.flickr.com/photos/technomancy/14654421878][experimental build]] uses the [[http://pjrc.com/store/teensy31.html][Teensy 3]] microcontroller and
-[[https://github.com/technomancy/orestes/tree/teensy3][Forth-based]] firmware, but this is not yet stable.
+[[https://github.com/technomancy/orestes/tree/teensy3][Forth-based]] firmware, but this is not yet suitable for general-purpose use.
 
 ** License
 
