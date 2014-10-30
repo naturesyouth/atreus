@@ -175,7 +175,11 @@
          [diode-net `(net ,(+ 16 diode)
                       ,(string->symbol (format "N-diode-~s" diode)))]
          [column-net `(net ,(+ net-col 5)
-                       ,(string->symbol (format "N-col-~s" net-col)))])
+                       ,(string->symbol (format "N-col-~s" net-col)))]
+         ;; rotate middle keys additional 90° after calculating position
+         [rotation (cond [(= 5 col) 80]
+                         [(= 6 col) 280]
+                         [true rotation])])
     (switch-module x′ y′ rotation label
                    (if left? diode-net column-net)
                    (if left? column-net diode-net))))
@@ -240,7 +244,7 @@
       (for ([f board])
         (pretty-print f op 1))
       (display (call-with-input-file "traces.rktd"
-                 (curry read-string 99999)) op)
+                 (curry read-string 999999)) op)
       (display ")" op))))
 
 (write-placement "/tmp/atreus.kicad_pcb")
