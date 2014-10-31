@@ -184,6 +184,11 @@ otherwise) and get your name and link added here:
 - [[http://blog.mattgauger.com/blog/2014/08/19/atreus-my-custom-keyboard/][Matt Gauger]]
 - [[http://aaronash.com.au/posts/atreus-keyboard/][Aaron Ash]]
 
+There's also a [[http://librelist.com/browser/atreus/][mailing list]] for people who have built or ordered an
+Atreus or are interested in doing so. To join, simply email
+=atreus@librelist.com= with a subject of "join" and reply to the
+confirmation.
+
 ** Orestes
 
 A new [[https://www.flickr.com/photos/technomancy/14654421878][experimental build]] uses the [[http://pjrc.com/store/teensy31.html][Teensy 3]] microcontroller and
