@@ -78,7 +78,7 @@ this reason as well.
 
 *** Keycaps
 
-This [[http://keyshop.pimpmykeyboard.com/product/dsa-pbt-blank-sets][DSA-shaped base set]] (spherical indentations on the key, same
+This [[http://keyshop.pimpmykeyboard.com/products/full-keysets/dsa-blank-sets-1][DSA-shaped base set]] (spherical indentations on the key, same
 profile for each row) from Signature Plastics has 52 1x keys plus a
 few extras we won't use. There are two "deep dish" keys in that set
 which you can place under your index fingers on the home row to help
