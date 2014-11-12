@@ -114,7 +114,7 @@ TODO: describe finishing process for wood.
 
 ** Firmware
 
-The [[https://gitlab.com/technomancy/atreus-firmware/blob/master/readme.md][custom Atreus firmware]] is a small C project which
+The [[https://github.com/technomancy/atreus-firmware/][custom Atreus firmware]] is a small C project which
 implements matrix scanning and debouncing with user-customizeable
 layers and macro functions. Another option is the much more complex
 TMK firmware. My [[https://github.com/technomancy/tmk_keyboard/tree/atreus][fork of the tmk firmware]] has support for the Atreus
