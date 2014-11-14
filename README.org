@@ -138,8 +138,8 @@ has the same effect.
 - 50 diodes: $3.45 (radio shack, should be able to buy in-person)
 - Base blank DSA keycap set: $23.00 (signatureplastics.com)
 - Teensy 2: $16, $3 shipping (pjrc.com)
-- Acrylic materials: ~$16, varies by source
-- Acrylic laser cutting: 7.5 minutes on a 100W Epilog laser; varies by source
+- Case materials: ~$16, varies by source
+- Case laser cutting: 7.5 minutes on a 100W Epilog laser; varies by source
 - USB Mini-B cable: $5, various sources
 
 Recommended but optional:
@@ -183,6 +183,7 @@ otherwise) and get your name and link added here:
 - [[http://geekhack.org/index.php?topic=57007.0][Constantine]]
 - [[http://blog.mattgauger.com/blog/2014/08/19/atreus-my-custom-keyboard/][Matt Gauger]]
 - [[http://aaronash.com.au/posts/atreus-keyboard/][Aaron Ash]]
+- [[http://hackedpotatoes.com/2014/11/atreus-my-first-mechanical-keyboard/][Jesse Roberts]]
 
 There's also a [[http://librelist.com/browser/atreus/][mailing list]] for people who have built or ordered an
 Atreus or are interested in doing so. To join, simply email
@@ -192,7 +193,7 @@ confirmation.
 ** Orestes
 
 A new [[https://www.flickr.com/photos/technomancy/14654421878][experimental build]] uses the [[http://pjrc.com/store/teensy31.html][Teensy 3]] microcontroller and
-[[https://github.com/technomancy/orestes/tree/teensy3][Forth-based]] firmware, but this is not yet suitable for general-purpose use.
+ARM [[https://github.com/technomancy/orestes/tree/teensy3][Forth-based]] firmware, but this is not yet suitable for general-purpose use.
 
 ** License
 
