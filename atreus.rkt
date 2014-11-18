@@ -85,7 +85,6 @@
     (path /543EEB02)
     (fp_text value A-STAR (at -3 0 270) (layer F.SilkS)
              (effects (font (size 3.048 2.54) (thickness 0.4572))))
-    (fp_line (start -15.24 -7.62) (end -15.24 7.62) (layer F.SilkS) (width 0.381))
     (fp_line (start -15.24 7.62) (end 10.1 7.62) (layer F.SilkS) (width 0.381))
     (fp_line (start 10.1 7.62) (end 10.1 -7.62) (layer F.SilkS) (width 0.381))
     (fp_line (start 10.1 -7.62) (end -15.24 -7.62) (layer F.SilkS) (width 0.381))
@@ -121,7 +120,9 @@
     (pad B7 thru_hole circle (at -6.35 -6.35 270) (size 1.7526 1.7526)
          (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 15 N-col-10))
     (pad D6 thru_hole circle (at -3.81 -6.35 270) (size 1.7526 1.7526)
-         (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 14 N-col-9))))
+         (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 14 N-col-9))
+    (pad RST thru_hole circle (at -1.27 -6.35 270) (size 1.7526 1.7526)
+       (drill 1.0922) (layers *.Cu *.SilkS *.Mask) (net 0 ""))))
 
 (define nets
   `((net 0 "")
@@ -220,9 +221,11 @@
     (list (switch row col) (diode row col))))
 
 (define edge-cuts
-  (for/list [(s '([31 22] [84 22] [128 30] [128 54] [140 54] [140 30] [185 22]
+  (for/list [(s '([31 22] [84 22] [128 30] [128 54] [130 54] [130 60] [138 60]
+                  [138 54] [140 54] [140 30] [185 22]
                   [237 22] [250 95] [161 112] [107 112] [18 95]))
-             (e '([84 22] [128 30] [128 54] [140 54] [140 30] [185 22]
+             (e '([84 22] [128 30] [128 54] [130 54] [130 60] [138 60] [138 54]
+                  [140 54] [140 30] [185 22]
                   [237 22] [250 95] [161 112] [107 112] [18 95] [31 22]))]
     `(gr_line (start ,@s) (end ,@e) (angle 90) (layer Edge.Cuts) (width 0.3))))
 
