@@ -175,15 +175,7 @@ the Atreus, as well as the folks on the =#geekhack= freenode channel.
 
 ** Builds
 
-If you've built an Atreus, please let us know (pull request or
-otherwise) and get your name and link added here:
-
-- [[http://technomancy.us/173][Phil Hagelberg]]
-- [[http://blog.tarn-vedra.de/2014/04/reproducing-keyboard-science_1707.html][Moritz Ulrich]]
-- [[http://geekhack.org/index.php?topic=57007.0][Constantine]]
-- [[http://blog.mattgauger.com/blog/2014/08/19/atreus-my-custom-keyboard/][Matt Gauger]]
-- [[http://aaronash.com.au/posts/atreus-keyboard/][Aaron Ash]]
-- [[http://hackedpotatoes.com/2014/11/atreus-my-first-mechanical-keyboard/][Jesse Roberts]]
+If you've built an Atreus, please add your name to [[https://github.com/technomancy/atreus/wiki/BuildLogs][the build logs wiki]].
 
 There's also a [[http://librelist.com/browser/atreus/][mailing list]] for people who have built or ordered an
 Atreus or are interested in doing so. To join, simply email
