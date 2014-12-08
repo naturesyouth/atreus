@@ -2,10 +2,9 @@
 
 The Atreus is a mechanical keyboard designed primarily to match the
 shape of human hands and to be as portable as possible. The case
-measures 25x11cm and lacks even a number row, relying heavily upon the
-fn key. There is no PCB in this design, requiring [[http://wiki.geekhack.org/index.php?title=Hard-Wiring_How-To][a manual matrix
-wiring approach]]. However, given that there are only 4 rows and 11
-columns, the wiring process isn't as daunting as it could be.
+measures 26x12cm and lacks even a number row, relying heavily upon the
+=fn= key. There is a circuit board for this design, but it's also
+possible to [[http://wiki.geekhack.org/index.php?title=Hard-Wiring_How-To][manually wire the matrix]].
 
 I've seen a number of existing DIY 40% keyboard designs, but most of
 them stagger the rows, which I find very annoying now that I've gotten
@@ -16,6 +15,9 @@ versatile of the fingers. This design avoids both these problems while
 taking a more couch-friendly single-piece approach.
 
 [[./atreus.jpg]]
+
+See [[./changelog.md][the changelog]] for the various revisions made to the design since
+its initial release.
 
 ** Kits
 
@@ -41,12 +43,17 @@ numpad-style arrangement under the right hand:
  :    !     @     {     }     |       ||     pgup    7     8     9    *
  :    #     $     (     )     `       ||     pgdn    4     5     6    +
  :    %     ^     [     ]     ~       ||       \     1     2     3    ?
- :   L2  insert                       ||                   .     0    =
+ :   L2  insert super shift bksp ctrl || alt space   fn    .     0    =
 
-The =L2= key switches it to the function layer, and tapping =fn= here
-brings it back.
+The =L2= key switches it to the function layer, and tapping =L0= here
+brings it back to the first layer.
 
-The firmware project includes a number of other options, including
+ :  home    ↑    end  insert pgup     ||       ↑     F7    F8    F9   F10
+ :    ←     ↓     →    del   pgdn     ||       ↓     F4    F5    F6   F11
+ :                                    ||             F1    F2    F3   F12
+ :              super shift bksp ctrl || alt space   L0             reset
+
+The [[https://github.com/technomancy/atreus-firmware][firmware project]] includes a number of other options, including
 colemak, dvorak, and "software dvorak" which sends keycodes assuming
 the OS will perform the translation into dvorak. Adding new layouts or
 changing existing ones is easy.
@@ -64,17 +71,23 @@ fn) because the tactile effect has no benefit for keys that are held
 down, and giving a different response helps you learn the layout more
 quickly.
 
+For users that need to operate in sound-sensitive environments like
+open offices or libraries, [[http://deskthority.net/wiki/Cherry_MX_Clear][Cherry MX Clear]] switches are a popular
+choice since they still offer tactility withut the noise.
+
 *** Diodes
 
-In order to avoid ghosting, each switch needs a [[https://www.radioshack.com/product/index.jsp?productId=2062587][1N4148 diode]].
+In order to avoid ghosting, each switch needs a diode. The [[https://www.radioshack.com/product/index.jsp?productId=2062587][1N4148]] is a
+readily-available choice, but nearly any signal diode would work.
 
 *** Microcontroller
 
-A [[http://www.pjrc.com/teensy/index.html][Teensy 2]], [[http://www.pololu.com/product/3101][Pololu A-star micro]], or [[http://arduino.cc/en/Main/ArduinoBoardMicro][Arduino Micro]] is recommended.
+The circuit board design uses a [[http://www.pololu.com/product/3101][Pololu A-star micro]]. Hand-wired boards
+can also use a [[http://www.pjrc.com/teensy/index.html][Teensy 2]] or [[http://arduino.cc/en/Main/ArduinoBoardMicro][Arduino Pro Micro]].
 
-Be sure to get one without headers so it will fit in between the
-bottom layer and the plate. USB micro is preferred over USB mini for
-this reason as well.
+Be sure to get a microcontroller without headers so it will fit in
+between the bottom layer and the plate. USB micro is preferred over
+USB mini for this reason as well.
 
 *** Keycaps
 
@@ -84,11 +97,12 @@ few extras we won't use. There are two "deep dish" keys in that set
 which you can place under your index fingers on the home row to help
 guide your hands to the right spot without looking. However, you only
 get a single 1.5x keycap, and the middle two thumb keys both use them,
-so you might want to pick up an extra. You can buy a single DSA 1.5x
-keycap from [[http://www.keycapsdirect.com/key-capsinventory.php][Signature Plastics]] as well as keys with homing bumps if
-you prefer those to the deep dish keys for the keys under the index
-fingers. However, note that on a board as small as the Atreus, finding
-the home row is much easier than it is on a conventional keyboard.
+so you might want to pick up an extra.
+
+Many keycap sets (not the one linked above) are "sculpted", meaning
+that keys that go in different rows have a different shape. While you
+can use these for an Atreus, it's unlikely you'll find a set with the
+correct number for each row, so it's more wasteful.
 
 ** Case
 
@@ -105,12 +119,10 @@ pictured below.
 
 The bottom and top covers (black in the photo) should be cut in 3mm.
 The switch plate (frosted in the photo) can be cut in 4.5 or
-3mm. The spacer should be cut in 5 or 6mm; it needs to be at least as
+3mm. The spacer should be cut in 5mm; it needs to be at least as
 thick as the USB cable you connect to the microcontroller. I
 recommend using a USB cable with as thin a connector as you can
 find or sanding the connector down to the required thickness.
-
-TODO: describe finishing process for wood.
 
 ** Firmware
 
@@ -125,12 +137,13 @@ create your own layout once you've gotten a chance to try it and see
 what works for you.
 
 In either case you would use the =.hex= file you just produced with
-=avrdude= or the [[http://www.pjrc.com/teensy/loader.html][teensy loader]] to upload to the microcontroller.
+=avrdude= or the [[http://www.pjrc.com/teensy/loader.html][teensy loader]] to upload to the microcontroller. =make
+upload= should do what you need.
 
-Once the firmware is loaded and the keyboard is assembled, pressing
-the onboard reset button to update new versions of the firmware is
-pretty cumbersome; instead use the "reset" button on the layout, which
-has the same effect.
+Once the firmware is loaded and the keyboard is assembled, activating
+the hardware reset to upload new versions of the firmware is pretty
+cumbersome; instead use the "reset" button on the layout, which has
+the same effect.
 
 ** Bill of Materials
 
@@ -140,11 +153,11 @@ has the same effect.
 - Teensy 2: $16, $3 shipping (pjrc.com)
 - Case materials: ~$16, varies by source
 - Case laser cutting: 7.5 minutes on a 100W Epilog laser; varies by source
-- USB Mini-B cable: $5, various sources
+- USB micro cable: $5, various sources
 
 Recommended but optional:
 
-- 5 MX Black switches: $8.50 OR 5 MX Red switches: $10.00
+- 5 MX Red or MX Black switches: $8.50 - $10.00
 - additional 1.5x DSA keycap: $1 plus $8 shipping
 
 The base keycap set only has one 1.5x key, which is used for the inner
@@ -153,15 +166,22 @@ tacky, so I recommend getting a second 1.5x keycap separately.
 
 *** Other Tools
 
-You'll need a soldering iron, solder, a glue gun, a multimeter, hookup
-wire, and wire strippers. You'll also need eight M3 machine screws
-with nuts; the length of the screws depends on the thickness of the
-acrylic you use. You can add rubber feet to the bottom to prevent the
-board from sliding around when placed on a desk.
+You'll need a soldering iron, solder, and a wire cutter. A multimeter
+can come in handy for testing the connections but is optional. You'll
+also need eight M3 machine screws with nuts; the length of the screws
+depends on the thickness of the acrylic you use. You can add rubber
+feet to the bottom to prevent the board from sliding around when
+placed on a desk. You'll also need sandpaper and finishing oil for the
+wooden cases unless you have bought a kit.
+
+If you are building a hand-wired board you will also need a glue gun,
+hookup wire, and wire strippers.
 
 ** Assembly
 
-See the [[http://atreus.technomancy.us/assembly.pdf][assembly instructions]] PDF
+See the [[http://atreus.technomancy.us/assembly.pdf][assembly instructions]] PDF.
+
+Hand-wired boards will want the [[http://atreus.technomancy.us/assembly-hand-wired.pdf][previous edition of the assembly instructions]].
 
 ** Inspiration
 
