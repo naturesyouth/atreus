@@ -2,7 +2,7 @@
 
 ## Mark 3.1: 2014-11-25
 
-* Second revision of circuit board.
+* [Second revision of circuit board](http://gerblook.org/pcb/jweM8BcTbgKCL4zsj8tEYj).
 * Arrows on L2 shifted over one column.
 * Circuit board license changed to match the rest of the Atreus project.
 
@@ -16,7 +16,7 @@ column so they can be hit from the normal position without the pinky key.
 
 ## Mark 3: 2014-10-30
 
-* Initial board design in KiCAD + Racket.
+* Initial [board design](http://gerblook.org/pcb/zqMY66AEsKz3xehSrdoDV6) in KiCAD + Racket.
 * Assembly guide updated to include wood finishing.
 * Cable hole in case spacer has rounded edges.
 * New layout: multidvorak.
@@ -57,7 +57,7 @@ and porting the firmware logic to that.
 
 ## Mark 2: 2014-04-22
 
-* New OpenSCAD case design by Constantine.
+* New OpenSCAD [case design](https://www.flickr.com/photos/technomancy/14719013574) by Constantine.
 * New layouts: hardware dvorak, hardware colemak.
 * Assembly guide.
 
@@ -86,7 +86,7 @@ was documented.
 
 ## NX-01: 2014-02-22
 
-* Initial prototype!
+* [Initial prototype](https://www.flickr.com/photos/technomancy/12805226463)!
 * Case hand-drawn in Inkscape.
 * Teensy 2 microcontroller, hand-wired matrix.
 * Uses TMK firmware.
