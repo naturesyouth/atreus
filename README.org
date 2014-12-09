@@ -48,8 +48,8 @@ numpad-style arrangement under the right hand:
 The =L2= key switches it to the function layer, and tapping =L0= here
 brings it back to the first layer.
 
- :  home    ↑    end  insert pgup     ||       ↑     F7    F8    F9   F10
- :    ←     ↓     →    del   pgdn     ||       ↓     F4    F5    F6   F11
+ :  insert home    ↑    end  pgup     ||       ↑     F7    F8    F9   F10
+ :    del   ←      ↓     →   pgdn     ||       ↓     F4    F5    F6   F11
  :                                    ||             F1    F2    F3   F12
  :              super shift bksp ctrl || alt space   L0             reset
 
