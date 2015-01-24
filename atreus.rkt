@@ -252,4 +252,4 @@
                  (curry read-string 999999)) op)
       (display ")" op))))
 
-(write-placement "/tmp/atreus.kicad_pcb")
+(write-placement "atreus.kicad_pcb")

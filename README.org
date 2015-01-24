@@ -106,11 +106,25 @@ correct number for each row, so it's more wasteful.
 
 ** Circuit Board
 
-TODO: describe
+The =atreus.rkt= program calculates switch and diode positions based
+on row/column counts, spacing, and rotation factors, and emits a
+=atreus.kicad_pcb= file. The board outline and traces are done by hand
+and are stored in the =header.rktd= and =traces.rktd= files
+respectively. The =atreus.kicad_pcb= file can be imported into [[http://kicad.org][Kicad]]
+which can export Gerber files suitable for fabrication. A copy of the
+Kicad PCB file is included in the repository if you don't want to
+recompile it using Racket. Recompiling is only required if you want to
+make changes to the procedurally-generated portions of the board.
+
+Unfortunately most PCB fabricators require a minimum order of 10 or
+so, making this impractical for one-offs. The PCB is not required, so
+for one-off boards it's usually more sensible to stick with a [[http://atreus.technomancy.us/assembly-hand-wired.pdf][hand-wired build]] instead.
 
 ** Case
 
-bottom side. The [[http://geekhack.org/index.php?topic%3D54759.msg1304117#msg1304117][mark II case]] (in the `case/dxf` directory) is
+Layered laser-cut wood or acrylic. The original case (=case-mk-i.svg=)
+is slightly less wide and has a minor asymmetry with the screws on the
+bottom side. The [[http://geekhack.org/index.php?topic%3D54759.msg1304117#msg1304117][mark II case]] (in the =case/dxf= directory) is
 available as a DFX file that you can convert to SVG or EPS for a laser
 cutter using Inkscape. Mark II features 8 screw holes and a kind of "stair
 step" design around the top and bottom of the key clusters; mark I is
