@@ -57,6 +57,12 @@ cable_hole_width = 12;
    be zero. */
 staggering_offsets = [0, 5, 11, 6, 3];
 
+/* Whether or not to split the spacer into quarters. */
+quarter_spacer = false;
+
+/* Where the top/bottom split of a quartered spacer will be. */
+spacer_quartering_offset = 60;
+
 module rz(angle, center=undef) {
   /* Rotate children `angle` degrees around `center`. */
   translate(center) {
@@ -286,8 +292,34 @@ module spacer() {
   }
 }
 
+module spacer_quadrant(spacer_quadrant_number) {
+  /* Cut a quarter of a spacer. */
+  translate([0, spacer_quartering_offset]) {
+    intersection() {
+      translate([0, -spacer_quartering_offset]) { spacer(); }
+      rotate([0, 0, spacer_quadrant_number * 90]) { square([1000, 1000]); }
+    }
+  }
+}
+
+module quartered_spacer()
+{
+  /* Assemble all four quarters of a spacer. */
+  spacer_quadrant(0);
+  spacer_quadrant(1);
+  translate([-5,-10]) spacer_quadrant(2);
+  translate([5,-10]) spacer_quadrant(3);
+}
+
 /* Create all four layers. */
 top_plate();
-translate([300, 150]) { spacer(); }
 translate([300, 0]) { switch_plate(); }
 translate([0, 150]) { bottom_plate(); }
+translate([300, 150]) {
+  if (quarter_spacer == true) {
+    quartered_spacer();
+  }
+  else {
+    spacer();
+  }
+}
