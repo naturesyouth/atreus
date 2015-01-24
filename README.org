@@ -104,25 +104,42 @@ that keys that go in different rows have a different shape. While you
 can use these for an Atreus, it's unlikely you'll find a set with the
 correct number for each row, so it's more wasteful.
 
+** Circuit Board
+
+TODO: describe
+
 ** Case
 
-Layered laser-cut wood or acrylic. The original case (=case-mk-i.svg=)
-is slightly less wide and has a minor asymmetry with the screws on the
-bottom side. The [[http://geekhack.org/index.php?topic%3D54759.msg1304117#msg1304117][mark II case]] (in the =case= directory) is implemented
-programmatically in openscad, though dxf files are available as a
-convenience, which can be converted to SVG or EPS for laser cutting
-with Inkscape. Mark II features 8 screw holes and a kind of "stair
+bottom side. The [[http://geekhack.org/index.php?topic%3D54759.msg1304117#msg1304117][mark II case]] (in the `case/dxf` directory) is
+available as a DFX file that you can convert to SVG or EPS for a laser
+cutter using Inkscape. Mark II features 8 screw holes and a kind of "stair
 step" design around the top and bottom of the key clusters; mark I is
 pictured below.
 
+TODO: the logo is missing from some of the case files and needs to be added back in.
+
+There is also a programmatically-implemented version of the case
+written in OpenSCAD; it is more flexible (you can tweak the number of
+rows/cols, etc and recompile) but it doesn't match the canonical case
+exactly; in particular the screw holes are placed differently.
+
 [[./layers.jpg]]
 
-The bottom and top covers (black in the photo) should be cut in 3mm.
-The switch plate (frosted in the photo) can be cut in 4.5 or
-3mm. The spacer should be cut in 5mm; it needs to be at least as
-thick as the USB cable you connect to the microcontroller. I
-recommend using a USB cable with as thin a connector as you can
-find or sanding the connector down to the required thickness.
+The first two shapes in the case file are the top and bottom covers;
+these should be cut on 3mm acrylic (black in the photo). The third is
+the spacer that goes under the fourth, which is the plate on which the
+switches are mounted. These should be cut in 6mm, especially the
+spacer, which needs to be at least as thick as the mini USB cable you
+connect to the microcontroller. I recommend using a mini USB cable
+with as thin a connector as you can find or sanding the connector
+down to the required thickness. The switch plate could be thinner, but
+not under 3mm.
+
+On a 100W Epilog laser, the 3mm layers cut in about a minute and a
+half. I did a run with 6mm acrylic of the other layers which took
+nearly 6 minutes.
+
+Wood cases should be finished with sandpaper and finishding oil/wax.
 
 ** Firmware
 

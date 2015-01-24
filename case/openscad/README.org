@@ -23,4 +23,6 @@ To use, open this script in OpenSCAD, select *Compile and Render
 
 Use Inkscape to convert to SVG, if necessary.
 
-
+Please note that the OpenSCAD version of the case is not a direct port
+of the canonical DXF; the screw placement is a little bit different,
+and the curve of the bottom edge sticks out a bit more.
