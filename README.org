@@ -214,6 +214,8 @@ See the [[http://atreus.technomancy.us/assembly.pdf][assembly instructions]] PDF
 
 Hand-wired boards will want the [[http://atreus.technomancy.us/assembly-hand-wired.pdf][previous edition of the assembly instructions]].
 
+The LaTeX source to the assembly instructions is in the =assembly= directory.
+
 ** Inspiration
 
 These fine projects all provided inspiration for various aspects of
@@ -228,7 +230,7 @@ the Atreus, as well as the folks on the =#geekhack= freenode channel.
 
 If you've built an Atreus, please add your name to [[https://github.com/technomancy/atreus/wiki/BuildLogs][the build logs wiki]].
 
-There's also a [[http://librelist.com/browser/atreus/][mailing list]] for people who have built or ordered an
+There's also a [[http://atreus.technomancy.us/list][mailing list]] for people who have built or ordered an
 Atreus or are interested in doing so. To join, simply email
 =atreus@librelist.com= with a subject of "join" and reply to the
 confirmation.
@@ -240,6 +242,6 @@ ARM [[https://github.com/technomancy/orestes/tree/teensy3][Forth-based]] firmwar
 
 ** License
 
-Copyright © 2014 Phil Hagelberg and contributors
+Copyright © 2014-2015 Phil Hagelberg and contributors
 
 Released under the [[https://www.gnu.org/licenses/gpl.html][GNU GPL version 3]]
