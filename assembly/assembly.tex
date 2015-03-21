@@ -75,7 +75,7 @@ smooth the inner surfaces feel to the touch.
 \section{Oiling Case}
 
 Be sure to get all the wood dust off the pieces before you go on. Open
-up the wax/oil mixture. Dip your brush in and start spreading it over
+up the wax/oil mixture. Apply some to the brush and start spreading it over
 one side of each case piece. The color of the wood will darken as it
 absorbs the oil. Try to ensure it's spread evenly. Be more generous
 with the oil on the outer exposed surfaces.
@@ -94,7 +94,7 @@ fully dry before going on.
 
 Once one side of each piece is finished, you'll need to lay them out
 for a half hour or so to let them dry. Once one side is dry, repeat
-the process on the other side. After you've finished all the soldering
+the process on the other side. After you've finished the construction
 you can come back and add another few coats to the outermost surfaces
 for a smoother texture. Once it's dried for a while, wipe the excess
 off. While you're waiting, you can start soldering the diodes and
@@ -107,28 +107,30 @@ later.
 If you've never soldered before, there are plenty of good
 introductions online.\footnote{This one from Adafruit is great:
   https://learn.adafruit.com/adafruit-guide-excellent-soldering/tools}
-Coat the tip of the iron thinly with some solder before you start. The
-key is to use the iron to heat the joint for a second or two, then
-bring in a dab of the solder and let it melt and stick to the
-component and the circuit board pad.
+Coat the tip of the hot iron thinly with some solder before you
+start. The key is to use the iron to heat both parts of the joint for
+a second or two, then bring in a dab of the solder and let it melt and
+stick to the component and the circuit board pad.
 
 \vspace{1em}
 
 Take five diodes at a time and bend them into a U shape. Place them
 into the diode holes next to each switch slot on the reverse side of
 the board. Each diode has a black band on it; the band should be
-pointing to the bottom of the circuit board, toward the arrow on the
-board. Bend the legs of the diodes outwards to hold them in place,
-then flip the board over and solder them in place.
+pointing to the bottom of the circuit board, toward each diode's arrow
+on the printed side of the board. Once all five are in, bend the legs
+of the diodes outwards to hold them in place, then flip the board over
+and solder them in place.
 
 \vspace{1em}
 \noindent\makebox[\textwidth]{%
   \includegraphics[width=\linewidth]{diodes.jpg}}
 \vspace{1em}
 
-Once they're soldered, trim the diode legs with wire
-cutters. (This step should be done with protective eye covering.) Keep
-the diode legs; they will be needed in the next step.
+Once they're soldered, trim the diode legs with wire cutters. (This
+step should be done with protective eye covering.) Keep the diode
+legs; they will be needed in the next step. Repeat until each diode
+position is filled.
 
 \section{Controller}
 
@@ -139,6 +141,13 @@ holes we're going to use on the controller with solder. (This is all
 the left side ones, plus all the right side ones except 3V3, 5V, and
 VIN.) If you have a ``helping hands'' stand, this is where it comes in
 useful.
+
+\vspace{1em}
+
+If the controller came in a pink bag with its own header pins, you may
+be tempted to use them to connect the controller to the circuit
+board. Don't do this--they are too big and will prevent the case from
+closing when you're done.
 
 \vspace{1em}
 
@@ -182,9 +191,10 @@ Before you go on, take the time to double-check the solder joints on
 the controller. The solder should fill the hole completely without
 spilling over to adjacent holes, and the legs should be secure. Also
 check that all the diodes are facing the correct direction with the
-black band on the bottom side. Once the switches are in place, the
-controller will be pinned between the switch plate and the circuit
-board, making it difficult to make further changes to the controller.
+black band pointing to the bottom of the board. Once the switches are
+in place, the controller will be pinned between the switch plate and
+the circuit board, making it difficult to make further changes to the
+controller.
 
 \section{Switches}
 
@@ -206,9 +216,17 @@ from poking through the circuit board.
 
 If your kit has five linear switches (non-tactile, usually red) place
 those in the modifier positions next and solder them in. These all go
-on the bottom row: SW3:3, SW5:0, SW6:0, SW8:3, and SW9:3. Then proceed
-with the rest of the switches. The switches should pin the switch
-plate to the circuit board.
+on the bottom row: SW3:3, SW5:0, SW6:0, SW8:3, and SW9:3.
+
+\vspace{1em}
+
+Once you have a switch in each column and a switch in each row, you
+can skip ahead to the next step where you install the firmware in
+order to ensure all the connections to the controller are solid. If
+you place all the switches now, it will be difficult to fix problems
+with the controller since reaching the controller involves removing
+all the switches. Testing with only a few switches attached will let
+you spot problems early when they're still easier to fix.
 
 \vspace{1em}
 \noindent\makebox[\textwidth]{%
@@ -258,8 +276,11 @@ Before you place the rubber feet on the bottom plate near the corners,
 consider giving the outer case another coat or two of wax and allowing
 it to dry. Then close the case by placing the switch plate on top of
 the spacer and bottom plate, placing the top plate on it, and screwing
-it together with the nuts on top. If the rubber feet don't stay on
-with the provided adhesive, white glue may be needed to secure them.
+it together with the nuts on top. If the controller was not attached
+close enough to the circuit board, it may be necessary to sand down
+the USB connector in order to close the case. If the rubber feet don't
+stay on with the provided adhesive, white glue may be needed to secure
+them.
 
 \vspace{1em}
 
@@ -268,7 +289,14 @@ middle thumb keys.
 
 \vspace{1em}
 
-Congratulations. Enjoy your new keyboard.
+Congratulations. Enjoy your new keyboard. It will take a considerable
+adjustment period to get used to it, but it should result in much more
+comfortable and effective typing. Also remember that you're encouraged
+to customize the layout to make it truly your own.
+
+\vspace{1em}
+
+Happy typing!
 
 %% \noindent\makebox[\textwidth]{%
 %% \includegraphics[width=\linewidth]{finished.jpg}}
