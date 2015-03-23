@@ -198,11 +198,6 @@ controller.
 
 \section{Switches}
 
-\noindent\makebox[\textwidth]{%
-  \includegraphics[width=\linewidth]{switch-corners.jpg}}
-
-\vspace{1em}
-
 Next take four switches and place each switch in a corner of the
 switch plate. Put the switch plate face-down on the table with the
 pins sticking up. Carefully fit the circuit board over the protruding
@@ -216,24 +211,25 @@ from poking through the circuit board.
 
 If your kit has five linear switches (non-tactile, usually red) place
 those in the modifier positions next and solder them in. These all go
-on the bottom row: SW3:3, SW5:0, SW6:0, SW8:3, and SW9:3.
-
-\vspace{1em}
-
-Once you have a switch in each column and a switch in each row, you
-can skip ahead to the next step where you install the firmware in
-order to ensure all the connections to the controller are solid. If
-you place all the switches now, it will be difficult to fix problems
-with the controller since reaching the controller involves removing
-all the switches. Testing with only a few switches attached will let
-you spot problems early when they're still easier to fix.
+on the bottom row: SW3:3, SW5:0, SW6:0, SW8:3, and SW9:3. Fill in the
+rest of the bottom row with your primary switch type, and then fill in
+the leftmost column as well.
 
 \vspace{1em}
 \noindent\makebox[\textwidth]{%
   \includegraphics[width=\linewidth]{switches.jpg}}
 \vspace{1em}
 
-\section{Wrapping up}
+\section{Firmware}
+
+You now have enough switches installed to test every pin on the
+microcontroller. Installing the firmware will allow you to spot
+mistakes before the board is fully completed. Once all the switches
+are in place it's a lot of work to go back and fix connections on the
+microcontroller, but at this point it can be done by only removing a
+handful of switches.
+
+\vspace{1em}
 
 Plug in the USB micro cable into the controller, and plug the other
 side into your computer. Get a copy of the
@@ -259,16 +255,24 @@ pins together.) Now would be a good time to test each switch by typing
 ``The quick, brown fox jumped over the lazy dog.'' and hitting the
 other few keys which aren't hit by that phrase.
 
-\vspace{1em}
+\section{Wrapping Up}
 
 If there's a misbehaving switch, it's often caused by a cold
-joint. Reflow the solder on both contacts of the switch and the
-diode. If an entire row or column is out, it's probably the connection
-to the controller. You can follow the traces for the columns back
-to the middle, but the rows on the back of the board are obscured when
-the keyboard is assembled. The bottom four pins on the left correspond
-to the four rows, top to bottom. Reflowing the pin's solder for the
-affected row or column is usually enough to get it working.
+joint. Reflow the solder on both contacts of the switch and the diode
+first; if that doesn't fix it, it may be the connection to the
+controller. You can follow the traces for the columns back to the
+middle, but the rows on the back of the board are obscured when the
+keyboard is assembled. The bottom four pins on the left correspond to
+the four rows, top to bottom. Reflowing the controller pin's solder
+for the affected row or column is usually enough to get it
+working. First try the exposed solder on the big circuit board; if that
+doesn't fix it you may need to desolder some switches to get to the
+pins on the controller itself.
+
+\vspace{1em}
+
+If all the switches are registering key presses on your computer,
+finish soldering the rest of the switches in.
 
 \vspace{1em}
 
