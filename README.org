@@ -73,7 +73,7 @@ quickly.
 
 For users that need to operate in sound-sensitive environments like
 open offices or libraries, [[http://deskthority.net/wiki/Cherry_MX_Clear][Cherry MX Clear]] switches are a popular
-choice since they still offer tactility withut the noise.
+choice since they still offer tactility without the noise.
 
 *** Diodes
 
@@ -146,7 +146,7 @@ On a 100W Epilog laser, the 3mm layers cut in about a minute and a
 half. I did a run with 6mm acrylic of the other layers which took
 nearly 6 minutes.
 
-Wood cases should be finished with sandpaper and finishding oil/wax.
+Wood cases should be finished with sandpaper and finishing oil/wax.
 
 ** Firmware
 
