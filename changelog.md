@@ -1,5 +1,10 @@
 # Change log
 
+## NX-03: 2015-05-08
+
+* Matias Clicky switches.
+* Alps-compatible switch plate.
+
 ## Mark 3.1: 2014-11-25
 
 * [Second revision of circuit board](http://gerblook.org/pcb/jweM8BcTbgKCL4zsj8tEYj).
