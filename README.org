@@ -42,7 +42,7 @@ numpad-style arrangement under the right hand:
 
  :    !     @     {     }     |       ||     pgup    7     8     9    *
  :    #     $     (     )     `       ||     pgdn    4     5     6    +
- :    %     ^     [     ]     ~       ||       \     1     2     3    ?
+ :    %     ^     [     ]     ~       ||       &     1     2     3    \
  :   L2  insert super shift bksp ctrl || alt space   fn    .     0    =
 
 The =L2= key switches it to the function layer, and tapping =L0= here
