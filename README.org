@@ -110,7 +110,7 @@ The =atreus.rkt= program calculates switch and diode positions based
 on row/column counts, spacing, and rotation factors, and emits a
 =atreus.kicad_pcb= file. The board outline and traces are done by hand
 and are stored in the =header.rktd= and =traces.rktd= files
-respectively. The =atreus.kicad_pcb= file can be imported into [[http://kicad.org][Kicad]]
+respectively. The =atreus.kicad_pcb= file can be imported into [[http://kicad-pcb.org][Kicad]]
 which can export Gerber files suitable for fabrication. A copy of the
 Kicad PCB file is included in the repository if you don't want to
 recompile it using Racket. Recompiling is only required if you want to
