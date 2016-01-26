@@ -13,4 +13,5 @@ This directory contains design files for a laser cut Atreus case.
 These files are missing the logo.
 
 Unless you're getting this cut somewhere with size restrictions, you
-should probably use the =.eps= files in the parent directory.
+should probably use the =.eps= files in the parent directory. These
+also only work with Cherry MX switches, not Matias or Alps.
