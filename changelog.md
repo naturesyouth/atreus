@@ -1,5 +1,14 @@
 # Change log
 
+## Mark 3.6: 2016-3-14
+
+* New layout with arrows on the fn layer.
+* PCB is now label-side up by default.
+
+## Mark 3.5: 2015-6-23
+
+* Change to Matias switches.
+
 ## NX-03: 2015-05-08
 
 * Matias Clicky switches.

@@ -2,6 +2,9 @@
 \title{Atreus Keyboard Assembly}
 \date{ }
 \usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{wrapfig}
+\newgeometry{margin=3cm}
 \begin{document}
 \setlength{\parindent}{0cm}
 \maketitle
@@ -17,6 +20,7 @@ other tools. The kit should contain these parts and a few spares:
 \item Diodes (42)
 \item Key switches (37 tactile or clicky, 5 red)
 \item A-Star Micro controller
+\item Printed circuit board (PCB)
 \item Machine screws and nuts (8 each, 16mm M3 size)
 \item Key caps (40 normal, 2 long)
 \item USB micro cable
@@ -26,11 +30,10 @@ other tools. The kit should contain these parts and a few spares:
 You'll also need to have these on hand:
 
 \begin{itemize}
-\item Soldering iron and solder
-\item Wire cutters
-\item Tape (masking tape works well)
 \item Brush for applying finishing wax (a toothbrush will do)
-\item Optional: ``helping hands'' stand
+\item Soldering iron and solder (thin solder and an iron with a sharp tip)
+\item Wire cutters
+\item Rags or paper towels to lay the parts down on during construction
 \end{itemize}
 
 \vspace{1em}
@@ -39,12 +42,12 @@ The latest version of this document can always be found
 online.\footnote{http://atreus.technomancy.us/assembly.pdf} If you're
 reading a black-and-white printed copy, you may find some of the
 photos clearer in color onscreen. This copy describes the
-circuit-board-based kit. If you have an earlier hand-wired kit, see
-the older assembly
+circuit-board-based kit. If you are hand-wiring a board, see the older
+assembly
 guide.\footnote{http://atreus.technomancy.us/assembly-hand-wired.pdf}
-The photos in this guide depict Cherry MX switches, but some kits ship
-with Matias switches instead, which have a clear housing. The assembly
-steps are the same in either case.
+The photos in this guide depict Matias switches, (with rectangular
+switch stems) but you can use Cherry MX switches (with stems shaped
+like a +) as well. The assembly steps are the same in either case.
 
 \section{Sanding}
 
@@ -55,7 +58,7 @@ single plate could damage it.
 
 \vspace{1em}
 \noindent\makebox[\textwidth]{%
-\includegraphics[width=\linewidth]{sanding.jpg}}
+\includegraphics[width=0.7\linewidth]{sanding.jpg}}
 \vspace{1em}
 
 Keep in mind that the top side of the top plate and the bottom side of
@@ -69,26 +72,38 @@ fine cloth works well.
 
 \section{Finishing}
 
+%% TODO: mention polyurethane
+
 You have two options when it comes to finishing. The easiest way is to
 proceed with the wax/oil mixture included in the kit. The other option
 is to apply several layers of lacquer and wet sand it down in
 between coats. This requires buying more supplies and takes significantly
-longer, but it results in a shinier
+longer, but it results in a sturdier, shinier
 finish.\footnote{http://atreus.technomancy.us/lacquer.gif} The steps
 for the lacquered finish are described in a separate
 document,\footnote{http://atreus.technomancy.us/lacquer.pdf} and the
 rest of this section describes the quicker finishing method.
+
+\vspace{1em}
+
+Some people don't like the look of the exposed edges charred from the
+laser cutter. You can choose to sand off the charring, or alternately
+cover it all with black ink from a sharpie for a more consistent look.
+
+\vspace{1em}
 
 Open up the wax/oil mixture. Apply some to the brush and start
 spreading it over one side of each case piece. The color of the wood
 will darken as it absorbs the oil. Try to ensure it's spread
 evenly. Be more generous with the oil on the outer exposed
 surfaces. Once you've spread it with the brush, you can use your
-fingers to work the wax into the wood more deeply.
+fingers to work the wax into the wood more deeply. If you need to
+reapply the finishing in the future, butcher block conditioner is
+readily available in stores and will do the job nicely.
 
 \vspace{1em}
 \noindent\makebox[\textwidth]{%
-\includegraphics[width=\linewidth]{oiled.jpg}}
+\includegraphics[width=0.7\linewidth]{oiled.jpg}}
 \vspace{1em}
 
 As your brush goes over the edges of the laser-cut wood, it will get
@@ -96,17 +111,17 @@ dirty from charred wood particles. After you've finished oiling one
 side of each piece, it's best to wash out the brush. Be sure it's
 fully dry before going on.
 
-\section{Drying Case}
+\section{Drying}
 
 Once one side of each piece is finished, you'll need to lay them out
-for a half hour or so to let them dry. Once one side is dry, repeat
-the process on the other side. After you've finished the construction
-you can come back and add another few coats to the outermost surfaces
-for a smoother texture. Once it's dried for a while, wipe the excess
-off. While you're waiting, you can start soldering the diodes and
-controller onto the circuit board, but don't solder any switches in
-before the switch plate is ready or you'll just need to remove them
-later.
+for a half hour or so to let them dry. (Longer if using lacquer.) Once
+one side is dry, repeat the process on the other side. After you've
+finished the construction you can come back and add another few coats
+to the outermost surfaces for a smoother texture. Once it's dried for
+a while, wipe the excess off. While you're waiting, you can start
+soldering the diodes and controller onto the circuit board, but don't
+solder any switches in before the switch plate is ready or you'll just
+need to remove them later.
 
 \section{Diodes}
 
@@ -121,15 +136,16 @@ stick to the component and the circuit board pad.
 \vspace{1em}
 
 Take five diodes at a time and bend them into a U shape. Place them
-into the diode holes next to each switch slot on the reverse side of
+into the diode holes next to each switch slot on the unlabeled side of
 the board. Each diode has a black band on it; the band should be
 pointing in the direction of the arrow on the printed side of the
-board. Once all five are in, bend the legs of the diodes outwards to
-hold them in place, then flip the board over and solder them in place.
+board. Once all five are in, pinch the legs of the diodes together to
+keep them from falling out, then flip the board over and solder them
+in place. Make sure they don't protrude off the board more than necessary.
 
 \vspace{1em}
 \noindent\makebox[\textwidth]{%
-  \includegraphics[width=\linewidth]{diodes.jpg}}
+  \includegraphics[width=0.7\linewidth]{diodes.jpg}}
 \vspace{1em}
 
 In the photo the diodes are inserted from the back of the circuit
@@ -146,152 +162,171 @@ Once the diodes are in place, you can begin attaching the controller.
 If the controller came in a pink bag with its own header pins, you may
 be tempted to use them to connect the controller to the circuit
 board. Don't do this--they are too big and will prevent the case from
-closing when you're done.
+closing when you're done. We will be using the diode legs we just
+trimmed instead.
 
 \vspace{1em}
 
-Take four trimmed diode legs and bend them into an L shape. Hold the
-controller upside down and insert the diode legs into the holes at the
-corners, (except for the VIN corner, which is not used; use the GND
-hole instead as indicated in the picture below) fixing them in place
-with tape. Try to get them to point straight.
-
-\vspace{1em}
-\noindent\makebox[\textwidth]{%
-  \includegraphics[width=\linewidth]{taped-pins.jpg}}
-\vspace{1em}
-
-Insert the legs into the circuit board. The port for the USB cable
-should fit into the circuit board's notch in the middle. Solder the
-diode legs into the circuit board and trim them. Then flip the whole
-thing over, remove the tape, and solder them into the controller on
-the other side, trying to ensure the controller is as close to the
-board as possible.
+First take the PCB with the labeled side down and fill the four corner
+holes in the center ``A-STAR'' section with solder. Insert diode legs
+into these holes while melting the solder. Then repeat the process for
+the other holes on the left, keeping them pointing as straight as possible.
 
 \vspace{1em}
 \noindent\makebox[\textwidth]{%
-  \includegraphics[width=\linewidth]{insert-pin.jpg}}
+  \includegraphics[width=0.8\linewidth]{many-pins.jpg}}
 \vspace{1em}
 
-Now that the controller is secured in place, bend some more diode legs
-and put them in the other holes in the circuit board. You can do this
-one side at a time. Use the same method of taping the bent ends in
-place, flipping, and soldering the other side in place before going
-back to solder the bent side. Trim as you go. Be sure to fill all the
-``A-STAR'' holes in the circuit board.
+Fit the controller over the pins you've attached so far. Solder the
+four corner pins already connected to the PCB into the corners of the
+controller. (The bottom left corner is unused; the pin above is used
+instead.) Try to ensure the controller is as close to the PCB as
+possible and not at an angle. Then solder the other left-side diode
+legs into the controller as well. Trim them all with your wire
+cutters when they are secure.
 
+\vspace{1em}
+
+Eight right-side holes remain. For these, bend four diode legs at a
+time into an L shape, and insert them into four of the remaining
+holes. Flip the board over and solder the protruding diode legs to the
+PCB, then trim them down and flip the board back over. Straighten the
+diode legs, then solder and trim them. Repeat for the remaining
+unpopulated holes. From the PCB side, all the holes will be used, but
+from the controller side, there will be some unused.
+
+\vspace{1em}
+\noindent\makebox[\textwidth]{%
+  \includegraphics[width=0.8\linewidth]{bent-legs.jpg}}
 \vspace{1em}
 
 Before you go on, take the time to double-check the solder joints on
 the controller. The solder should fill the hole completely without
 spilling over to adjacent holes, and the legs should be secure. Also
 check that all the diodes are facing the correct direction with the
-black band pointing to the bottom of the board. Once the switches are
-in place, the controller will be pinned between the switch plate and
-the circuit board, making it difficult to make further changes to the
-controller and its connections.
+black band pointing to the bottom of the board.
+
+\section{Firmware}
+
+Installing the firmware now isn't strictly necessary, but it will
+allow you to spot mistakes before the board is finished.
+
+\vspace{1em}
+
+\begin{wrapfigure}{r}{0.25\linewidth}
+  \includegraphics[width=0.8\linewidth]{reset.jpg}
+\end{wrapfigure}
+
+Plug in the USB micro cable into the controller, and plug the other
+side into your computer. Get a copy of the
+firmware \footnote{Available at https://atreus.technomancy.us/tmk} and
+its dependencies, \texttt{avrdude} and \texttt{gcc-avr}, linked in the
+firmware readme. The first time you upload the firmware, you will have
+to use the hardware reset to enter the bootloader: take a diode leg or
+wire and touch one end to the reset pin and one end to the ground
+pin. (These are circled in the photo.)  Touch them together twice in
+under a second and the LED underneath will begin pulsing in a
+different pattern from the original blinking. This indicates it has
+entered the bootloader for 8 seconds.
+
+\vspace{1em}
+
+While in the bootloader, type \texttt{make upload KEYMAP=qwerty
+  USB=[...]}  from the firmware directory\footnote{See the firmware
+  readme for instructions about determining the USB argument and
+  customizing the layout.}. The firmware should be uploaded, and it
+will start functioning as a keyboard once switches are connected. Next
+time you upload, you can use the reset key instead of touching the
+pins together.
+
+\vspace{1em}
+
+If you only want to use the default layout and don't want to bother
+with installing everything, the firmware readme also describes simpler
+steps for installing a pre-compiled firmware.
 
 \section{Switches}
 
 Next take four switches and place each switch in a corner of the
 switch plate. (The case layer with all the holes in it.) The switches
 should be oriented so that the side with pins is to the ``north'' of
-the board so they fit into the holes in the circuit board. Put the
-switch plate face-down on the table with the pins sticking
-up. Carefully fit the circuit board over the protruding pins, trying
-to get the pins to push as far through the circuit board as you can.
-Solder those corners to hold the circuit board and the switch plate
-together. The labeled side of the board should be face-up. Take care
-that the switch pins are straight; pushing in a switch with a pin
-that's a bit bent will bend it flat and prevent it from poking through
-the circuit board.
+the board so they will fit into the holes in the circuit board. Put
+the switch plate face-down on the table with the pins sticking
+up.
 
 \vspace{1em}
 
-If your kit has five linear switches (non-tactile, usually red), you
-can choose to use these for the modifiers or to leave the modifiers as
-normal tactile keys. Since modifier keys are held down, they do not
-benefit from tactility like normal keys do, so some people find they
-prefer linear keys there, but this is a matter of personal taste.
-
-\vspace{1em}
-
-If you decide to use the linear switches, place them in the modifier
-positions next and solder them in. These all go on the bottom row:
-SW3:3, SW5:0, SW6:0, SW8:3, and SW9:3. Fill in the rest of the bottom
-row with your primary switch type, and then fill in the leftmost
-column as well. Note that the center two switches are oriented
-sideways. The pins on them may need to be bent outwards a bit to get
-them to fit into the circuit board.
+Carefully fit the circuit board over the protruding pins with the
+labeled side down. Solder those corners to hold the circuit board and
+the switch plate together. The switches should be flush with the
+PCB. Take care that the switch pins are straight when you insert them;
+pushing in a switch with a pin that's a bit bent will bend it flat and
+prevent it from poking through the circuit board.
 
 \vspace{1em}
 \noindent\makebox[\textwidth]{%
-  \includegraphics[width=\linewidth]{switches.jpg}}
+  \includegraphics[width=0.7\linewidth]{some-switches.jpg}}
 \vspace{1em}
 
-\section{Firmware}
-
-With a full row and a full column installed you now have enough
-switches installed to test every pin on the
-microcontroller. Installing the firmware will allow you to spot
-mistakes before the board is fully completed. Once all the switches
-are in place it's a lot of work to go back and fix connections on the
-microcontroller, but at this point it can be done by only removing a
-handful of switches.
-
-\vspace{1em}
-
-Plug in the USB micro cable into the controller, and plug the other
-side into your computer. Get a copy of the
-firmware \footnote{Available at
-  https://github.com/technomancy/atreus-firmware} and its
-dependencies, \texttt{avrdude} and \texttt{gcc-avr}, linked in the
-firmware readme\footnote{If you only want to use the default layout
-  and don't want to bother with installing everything, the firmware
-  readme also describes simpler steps for installing a pre-built
-  firmware with the default layout}. The first time you upload the
-firmware, you will have to use the backup reset to enter the
-bootloader: take a diode leg or wire and touch one end to the reset
-pin and one end to the ground pin. (These are the bottom-most two
-exposed pins on the left-hand side of the controller when the keyboard
-is facing down.) Touch them together twice in under a second and the
-LED will begin pulsing in a different pattern from the original
-blinking. This indicates it has entered the bootloader for 8 seconds.
+Next fill in the rest of the bottom row (SW1:3 through SW10:3) and the
+leftmost column (SW0:1 and SW0:2). If your kit has red linear switches
+which do not have any tactile bump, you can choose to use these for
+the modifier keys (shift, ctrl, alt, etc) or to leave the modifiers as
+normal tactile or clicky keys. Since modifier keys are held down, they
+do not benefit from tactility like normal keys do, so some people find
+they prefer linear keys there, but this is a matter of personal
+taste. The modifiers on the bottom row are SW2:3, SW3:3, and SW8:3.
+Place normal switches (usually grey or white) here if you want the
+modifiers to feel like the other keys, and red ones if not.
 
 \vspace{1em}
 
-While in the bootloader, type \texttt{make upload USB=/path/to/usb}
-from the firmware directory. The firmware should be
-uploaded\footnote{See the firmware readme for instructions about
-  determining the USB argument and customizing the layout.}, and it
-should start acting as a keyboard. (At this point if you need to
-upload it again, you can use the reset key instead of touching the
-pins together.) Now would be a good time to test each switch that's
-been placed so far.
+Solder the left and right pins of each of the switches you've placed so
+far, and then plug it in to test them to ensure that each row and column is
+connected back up to the controller correctly. Once you've confirmed
+this, solder the rest of the switches, but leave the middle two
+sideways ones for last.
+
+\vspace{1em}
+\noindent\makebox[\textwidth]{%
+  \includegraphics[width=0.8\linewidth]{center-switches.jpg}}
+\vspace{1em}
+
+\vspace{1em}
+
+%% The main (non-rotated) switches on Matias kits have their pins
+%% positioned a bit lower on the switch than Cherry pins; this shifts
+%% the whole PCB a bit further down from where it would be on Cherry kits.
+
+%% The holes for the rotated switches are oriented according to their
+%% position on Cherry boards because Cherry switches cannot have their
+%% pins twisted; they have a plastic post that helps mount it on the
+%% PCB, but moving the middle holes down into the Matias-friendly
+%% position would make it completely incompatible with Cherry, while
+%% leaving it in the Cherry-friendly position simply makes it slightly
+%% inconvenient for Matias kits.
+
+Connecting the center two rotated thumb keys (SW5:0 and SW6:0) in kits
+with Matias switches requires a little bit of tweaking. (Cherry
+switches do not need this step.) The holes for the pins are not
+aligned quite under where the pins protrude. A little twisting will
+allow them to go in nicely. Note that the two switches must be twisted
+in opposite directions since they are oriented facing away from each
+other. You can use pliers or even just your wire cutters to twist
+them.
 
 \section{Wrapping Up}
-
-If all the switches are registering key presses on your computer,
-finish soldering the rest of the switches in.
-
-\vspace{1em}
 
 If there's a misbehaving switch, it's often caused by a cold
 joint. Reflow the solder on both contacts of the switch and the diode
 first; if that doesn't fix it, it may be the connection to the
-controller. You can follow the traces for the columns back to the
-middle, but the rows on the back of the board are obscured when the
-keyboard is assembled. The bottom four pins on the left correspond to
-the four rows, top to bottom.
-
-\vspace{1em}
-
-Re-melting the controller pin's solder for the affected row or column
-is usually enough to get it working. First try the melting exposed
-solder on the big circuit board; if that doesn't fix it you may need
-to desolder some switches to get to the pins on the controller
-itself. It's possible to remove switches using only your soldering
-iron, but getting a desoldering pump is much more effective.
+controller. You can follow the traces for the rows back to the middle,
+but the columns on the back of the board are obscured when the
+keyboard is assembled; you can see them in this PCB
+diagram\footnote{https://atreus.technomancy.us/pcb}.
+Re-melting the controller's solder joint for the affected row or
+column is usually enough to get it working, but in some cases you may
+need to reach under to get the joint that connects it to the PCB.
 
 \vspace{1em}
 
@@ -303,11 +338,18 @@ it from the controller.
 
 \vspace{1em}
 
-After the switches are all in and tested, close the case by placing
-the switch plate on top of the spacer and bottom plate, placing the
-top plate on it, and screwing it together with the nuts facing up. If the
-controller was not attached close enough to the circuit board, it may
-be necessary to sand down the USB connector in order to close the
+After the switches are all in and tested, place the keycaps. They can
+take a fair bit of pressure to go on, so support the underside of the
+board while pushing them on. The larger keycaps go on the middle thumb
+keys.
+
+\vspace{1em}
+
+All that's left is to do is close the case by placing the switch plate
+on top of the spacer and bottom plate, placing the top plate on it,
+and screwing it together with the nuts facing up. If the controller
+was not attached close enough to the circuit board, it may be
+necessary to sand down the USB connector in order to close the
 case. Before you place the rubber feet on the bottom plate near the
 corners, consider giving the outer case another coat or two of wax and
 allowing it to dry. If the rubber feet don't stay on with the provided
@@ -315,11 +357,10 @@ adhesive, white glue may be needed to secure them.
 
 \vspace{1em}
 
-All that's left is to place the keycaps. The larger keycaps go on the
-middle thumb keys. Congratulations. Enjoy your new keyboard. It will
-take a considerable adjustment period to get used to it, but it should
-result in much more comfortable and effective typing. Also remember
-that you're encouraged to customize the layout to make it truly your
+Congratulations. Enjoy your new keyboard. It will take a
+considerable adjustment period to get used to it, but it should result
+in much more comfortable and effective typing. Also remember that
+you're encouraged to customize the layout to make it truly your
 own. Happy typing!
 
 %% \noindent\makebox[\textwidth]{%
