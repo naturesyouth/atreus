@@ -40,9 +40,9 @@ unshifted, and all the modifiers are on the bottom row:
 The numbers and most of the punctuation are on the fn layer with a
 numpad-style arrangement under the right hand:
 
- :    !     @     {     }     |       ||     pgup    7     8     9    *
- :    #     $     (     )     `       ||     pgdn    4     5     6    +
- :    %     ^     [     ]     ~       ||       &     1     2     3    \
+ :    !    @     up     {    }        ||     pgup    7     8     9    *
+ :    #  left   down  right  $        ||     pgdn    4     5     6    +
+ :    [    ]      (     )    &        ||       `     1     2     3    \
  :   L2  insert super shift bksp ctrl || alt space   fn    .     0    =
 
 The =L2= key switches it to the function layer, and tapping =L0= here
@@ -50,10 +50,10 @@ brings it back to the first layer.
 
  :  insert home    ↑    end  pgup     ||       ↑     F7    F8    F9   F10
  :    del   ←      ↓     →   pgdn     ||       ↓     F4    F5    F6   F11
- :                                    ||             F1    F2    F3   F12
- :              super shift bksp ctrl || alt space   L0             reset
+ :                             reset  ||             F1    F2    F3   F12
+ :              super shift bksp ctrl || alt space   L0             
 
-The [[https://github.com/technomancy/atreus-firmware][firmware project]] includes a number of other options, including
+The [[https://atreus.technomancy.us/tmk][firmware]] includes a number of other options, including
 colemak, dvorak, and "software dvorak" which sends keycodes assuming
 the OS will perform the translation into dvorak. Adding new layouts or
 changing existing ones is easy.
@@ -64,16 +64,20 @@ changing existing ones is easy.
 
 This layout has five modifiers and 37 non-modifiers.
 
-I strongly prefer the feel and sound of tactile [[http://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=651][Cherry MX blue]]
-switches for typing. However, I like having linear [[http://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=103][Cherry MX black
+I strongly prefer the feel and sound of tactile [[https://deskthority.net/wiki/Matias_switch#Click][Matias Clicky]]
+switches for typing. However, I like having [[https://deskthority.net/wiki/Matias_switch#Linear][Matias Linear
 switches]] switches on the modifier keys (ctrl, alt, super, shift, and
 fn) because the tactile effect has no benefit for keys that are held
 down, and giving a different response helps you learn the layout more
 quickly.
 
 For users that need to operate in sound-sensitive environments like
-open offices or libraries, [[http://deskthority.net/wiki/Cherry_MX_Clear][Cherry MX Clear]] switches are a popular
-choice since they still offer tactility without the noise.
+open offices or libraries,
+[[http://deskthority.net/wiki/Matias_switch#Quiet_click][Matias Quiet
+Click]] switches are a popular choice since they still offer tactility
+without the noise. Other users prefer switches in the
+[[http://deskthority.net/wiki/Cherry_MX][Cherry MX]] family, which use
+different keycaps and switch plates but still work fine.
 
 *** Diodes
 
@@ -91,18 +95,22 @@ USB mini for this reason as well.
 
 *** Keycaps
 
-This [[http://keyshop.pimpmykeyboard.com/products/full-keysets/dsa-blank-sets-1][DSA-shaped base set]] (spherical indentations on the key, same
-profile for each row) from Signature Plastics has 52 1x keys plus a
-few extras we won't use. There are two "deep dish" keys in that set
-which you can place under your index fingers on the home row to help
-guide your hands to the right spot without looking. However, you only
-get a single 1.5x keycap, and the middle two thumb keys both use them,
-so you might want to pick up an extra.
+Caps for Matias switches are included in the official kits. Sculpted
+caps are also available [[http://matias.ca/order/#keycaps][from
+Matias]] or by harvesting from old Alps keyboards. It's recommended
+that you use unlabeled keys, because due to the different sizes and
+orientations of certain keys (backspace, shift, enter, etc) the labels
+will be incorrect if present.
 
-Many keycap sets (not the one linked above) are "sculpted", meaning
-that keys that go in different rows have a different shape. While you
-can use these for an Atreus, it's unlikely you'll find a set with the
-correct number for each row, so it's more wasteful.
+Cherry switches have more options. This
+[[http://keyshop.pimpmykeyboard.com/products/full-keysets/dsa-blank-sets-1][DSA-shaped
+base set]] (spherical indentations on the key, same profile for each
+row) from Signature Plastics has 52 1x keys plus a few extras we won't
+use. There are two "deep dish" keys in that set which you can place
+under your index fingers on the home row to help guide your hands to
+the right spot without looking. However, you only get a single 1.5x
+keycap, and the middle two thumb keys both use them, so you might want
+to pick up an extra.
 
 ** Circuit Board
 
@@ -127,11 +135,12 @@ Layered laser-cut wood or acrylic. The [[http://geekhack.org/index.php?topic%3D5
 design around the top and bottom of the key clusters; mark I is
 pictured below.
 
-The =3mm.eps= file contains the top plate, bottom plate, and switch
-plate. These can all be cut on 3mm acrylic or wood. The =spacer.eps=
-file should be cut on something thicker; between 4.5mm and 6mm is
-recommended. The spacer needs to be at least as thick as the connector
-of the USB cable you're using.
+The =3mm-alps-all.eps= file contains the top plate, bottom plate, and
+switch plate for Matias switches. =3mm.eps= contains the files for
+Cherry boards. These pieces can all be cut on 3mm acrylic or wood. The
+=spacer.eps= file should be cut on something thicker; between 4.5mm
+and 6mm is recommended. The spacer needs to be at least as thick as
+the connector of the USB cable you're using.
 
 There is also a programmatically-implemented version of the case
 written in OpenSCAD; it is more flexible (you can tweak the number of
@@ -146,30 +155,29 @@ On a 100W Epilog laser, the 3mm layers cut in about a minute and a
 half. I did a run with 6mm acrylic of the other layers which took
 nearly 6 minutes.
 
-Wood cases should be finished with sandpaper and finishing oil/wax.
+Wood cases should be finished with sandpaper and finishing oil/wax or
+with [[https://atreus.technomancy.us/lacquer.pdf][lacquer]] which
+takes longer but feels nicer.
 
 ** Firmware
 
-The [[https://github.com/technomancy/atreus-firmware/][custom Atreus firmware]] is a small C project which
-implements matrix scanning and debouncing with user-customizeable
-layers and macro functions. Another option is the much more complex
-TMK firmware. My [[https://github.com/technomancy/tmk_keyboard/tree/atreus][fork of the tmk firmware]] has support for the Atreus
-layout. You should be able to change into the =keyboard/atreus=
-directory and run =make KEYMAP=atreus= (or whichever variant you want)
+The [[https://atreus.technomancy.us/tmk][TMK firmware]] is
+recommended. You should be able to change into the =keyboard/atreus=
+directory and run =make KEYMAP=qwerty= (or whichever variant you want)
 to produce a qwerty =atreus.hex= file. You will probably want to
 create your own layout once you've gotten a chance to try it and see
-what works for you.
+what works for you. See the readme for instructions of how to upload
+it to the keyboard's controller.
 
-In either case you would use the =.hex= file you just produced with
-=avrdude= or the [[http://www.pjrc.com/teensy/loader.html][teensy loader]] to upload to the microcontroller. =make
-upload= should do what you need.
-
-Once the firmware is loaded and the keyboard is assembled, activating
-the hardware reset to upload new versions of the firmware is pretty
-cumbersome; instead use the "reset" button on the layout, which has
-the same effect.
+There is also the older
+[[https://github.com/technomancy/atreus-firmware][atreus-firmware]
+custom codebase which works but has fewer features. It is recommended
+mostly for learning purposes since the code is much simpler and easier
+to understand than TMK.
 
 ** Bill of Materials
+
+Using Cherry switches is cheapest unless you can find cheap Alps-mount keycaps:
 
 - 50 MX Blue switches: $29.00 (mechanicalkeyboards.com)
 - 50 diodes: $3.45 (radio shack, should be able to buy in-person)
@@ -203,9 +211,9 @@ hookup wire, and wire strippers.
 
 ** Assembly
 
-See the [[http://atreus.technomancy.us/assembly.pdf][assembly instructions]] PDF.
+See the [[https://atreus.technomancy.us/assembly.pdf][assembly instructions]] PDF.
 
-Hand-wired boards will want the [[http://atreus.technomancy.us/assembly-hand-wired.pdf][previous edition of the assembly instructions]].
+Hand-wired boards will want the [[https://atreus.technomancy.us/assembly-hand-wired.pdf][previous edition of the assembly instructions]].
 
 The LaTeX source to the assembly instructions is in the =assembly= directory.
 
@@ -223,10 +231,8 @@ the Atreus, as well as the folks on the =#geekhack= freenode channel.
 
 If you've built an Atreus, please add your name to [[https://github.com/technomancy/atreus/wiki/BuildLogs][the build logs wiki]].
 
-There's also a [[http://atreus.technomancy.us/list][mailing list]] for people who have built or ordered an
-Atreus or are interested in doing so. To join, simply email
-=atreus@librelist.com= with a subject of "join" and reply to the
-confirmation.
+There's also a [[https://atreus.technomancy.us/list][mailing list]] for people who have built or ordered an
+Atreus or are interested in doing so.
 
 ** Orestes
 
@@ -235,6 +241,6 @@ ARM [[https://github.com/technomancy/orestes/tree/teensy3][Forth-based]] firmwar
 
 ** License
 
-Copyright © 2014-2015 Phil Hagelberg and contributors
+Copyright © 2014-2016 Phil Hagelberg and contributors
 
 Released under the [[https://www.gnu.org/licenses/gpl.html][GNU GPL version 3]]

@@ -2,6 +2,7 @@
 
 ## Mark 3.6: 2016-3-14
 
+* TMK is the default firmware.
 * New layout with arrows on the fn layer.
 * PCB is now label-side up by default.
 
