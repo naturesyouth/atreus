@@ -50,7 +50,7 @@ brings it back to the first layer.
 
  :  insert home    ↑    end  pgup     ||       ↑     F7    F8    F9   F10
  :    del   ←      ↓     →   pgdn     ||       ↓     F4    F5    F6   F11
- :                             reset  ||             F1    F2    F3   F12
+ :                           reset    ||             F1    F2    F3   F12
  :              super shift bksp ctrl || alt space   L0             
 
 The [[https://atreus.technomancy.us/tmk][firmware]] includes a number of other options, including
@@ -169,11 +169,9 @@ create your own layout once you've gotten a chance to try it and see
 what works for you. See the readme for instructions of how to upload
 it to the keyboard's controller.
 
-There is also the older
-[[https://github.com/technomancy/atreus-firmware][atreus-firmware]
-custom codebase which works but has fewer features. It is recommended
-mostly for learning purposes since the code is much simpler and easier
-to understand than TMK.
+There is also the older [[https://github.com/technomancy/atreus-firmware][atreus-firmware]] custom codebase which works
+but has fewer features. It is recommended mostly for learning purposes
+since the code is much simpler and easier to understand than TMK.
 
 ** Bill of Materials
 
