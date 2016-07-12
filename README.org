@@ -96,15 +96,13 @@ USB mini for this reason as well.
 *** Keycaps
 
 Caps for Matias switches are included in the official kits. Sculpted
-caps are also available [[http://matias.ca/order/#keycaps][from
-Matias]] or by harvesting from old Alps keyboards. It's recommended
-that you use unlabeled keys, because due to the different sizes and
-orientations of certain keys (backspace, shift, enter, etc) the labels
-will be incorrect if present.
+caps are also available [[http://matias.ca/order/#keycaps][from Matias]] or by harvesting from old Alps
+keyboards. It's recommended that you use unlabeled keys, because due
+to the different sizes and orientations of certain keys (backspace,
+shift, enter, etc) many of the labels will be incorrect if present.
 
 Cherry switches have more options. This
-[[http://keyshop.pimpmykeyboard.com/products/full-keysets/dsa-blank-sets-1][DSA-shaped
-base set]] (spherical indentations on the key, same profile for each
+[[http://keyshop.pimpmykeyboard.com/products/full-keysets/dsa-blank-sets-1][DSA-shaped base set]] (spherical indentations on the key, same profile for each
 row) from Signature Plastics has 52 1x keys plus a few extras we won't
 use. There are two "deep dish" keys in that set which you can place
 under your index fingers on the home row to help guide your hands to
@@ -201,8 +199,8 @@ can come in handy for testing the connections but is optional. You'll
 also need eight M3 machine screws with nuts; the length of the screws
 depends on the thickness of the acrylic you use. You can add rubber
 feet to the bottom to prevent the board from sliding around when
-placed on a desk. You'll also need sandpaper and finishing oil for the
-wooden cases unless you have bought a kit.
+placed on a desk. You'll also need sandpaper and lacquer for the
+wooden case.
 
 If you are building a hand-wired board you will also need a glue gun,
 hookup wire, and wire strippers.
