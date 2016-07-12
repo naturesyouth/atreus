@@ -173,24 +173,27 @@ since the code is much simpler and easier to understand than TMK.
 
 ** Bill of Materials
 
-Using Cherry switches is cheapest unless you can find cheap Alps-mount keycaps:
+If you don't want to get [[https://atreus.technomancy.us][the kit]] you can source parts yourself. (You
+can also order a partial kit if you want to customize some of the
+parts.) Using Cherry switches is cheapest unless you can find cheap
+Alps-mount keycaps:
 
-- 50 MX Blue switches: $29.00 (mechanicalkeyboards.com)
-- 50 diodes: $3.45 (radio shack, should be able to buy in-person)
-- Base blank DSA keycap set: $23.00 (signatureplastics.com)
-- Teensy 2: $16, $3 shipping (pjrc.com)
-- Case materials: ~$16, varies by source
+- 50 Matias or Cherry switches from mechanicalkeyboards.com
+- 50 diodes from radio shack, ebay, or whatever
+- 40 1x, 2 1.5x Keycaps from signatureplastics.com OR full keycap set from matias.com
+- A-star micro from pololu.com
+- Case materials from various sources
 - Case laser cutting: 7.5 minutes on a 100W Epilog laser; varies by source
-- USB micro cable: $5, various sources
+- USB micro cable, get anywhere
 
 Recommended but optional:
 
-- 5 MX Red or MX Black switches: $8.50 - $10.00
-- additional 1.5x DSA keycap: $1 plus $8 shipping
+- 5 linear Matias or Cherry switches
 
-The base keycap set only has one 1.5x key, which is used for the inner
-thumb keys. You can use a 1x key for one of them, but it looks kind of
-tacky, so I recommend getting a second 1.5x keycap separately.
+The base keycap set from Signature Plastics only has one 1.5x key,
+which is used for the inner thumb keys. You can use a 1x key for one
+of them, but it looks kind of tacky, so I recommend getting a second
+1.5x keycap separately.
 
 *** Other Tools
 
