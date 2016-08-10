@@ -8,7 +8,7 @@ possible to [[http://wiki.geekhack.org/index.php?title=Hard-Wiring_How-To][manua
 
 I've seen a number of existing DIY 40% keyboard designs, but most of
 them stagger the rows, which I find very annoying now that I've gotten
-used to the columnar layout of the [[http://ergodox.org][Ergodox]]. In addition, many of the
+used to the columnar layout of the [[https://geekhack.org/index.php?topic=22780.0][Ergodox]]. In addition, many of the
 designs I've seen waste a lot of room on the space bar, failing to
 take into account the fact that the thumb is the strongest and most
 versatile of the fingers. This design avoids both these problems while
@@ -221,7 +221,7 @@ The LaTeX source to the assembly instructions is in the =assembly= directory.
 These fine projects all provided inspiration for various aspects of
 the Atreus, as well as the folks on the =#geekhack= freenode channel.
 
-- [[http://ergodox.org][Ergodox]]
+- [[https://geekhack.org/index.php?topic=22780.0][Ergodox]]
 - [[http://deskthority.net/workshop-f7/onehand-20-keyboard-t6617.html][OneHand]]
 - [[http://blog.fsck.com/2013/12/better-and-better-keyboards.html][keyboard.io]]
 - [[http://geekhack.org/index.php?topic=48718][ErgoT]]
