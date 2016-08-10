@@ -222,7 +222,7 @@ module right_screw_holes(hole_radius) {
   }
 
   /* add the screw hole near the cable hole */
-  translate([washer_radius - tmp[0],
+  translate([washer_radius - tmp[0] - 0.5*hand_separation,
              back_screw_hole_offset]) {
     rotate_half() {
       add_hand_separation() {
